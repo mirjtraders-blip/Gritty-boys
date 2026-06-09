@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T8TBZ345D3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-T8TBZ345D3');
+  </script>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mirj Rentals — Premium Event Hire</title>
+  <meta name="description" content="Mirj Rentals — premium tents, chairs, photo booths, stages and décor for weddings, corporate events and celebrations."/>
+  <meta property="og:title" content="Mirj Rentals — Premium Event Hire"/>
+  <meta property="og:description" content="Premium tents, chairs, photo booths, stages and décor for weddings, corporate events and celebrations across Cape Town."/>
+  <meta property="og:type" content="website"/>
+  <!-- Fonts — async (non-render-blocking) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="preconnect" href="https://images.unsplash.com"/>
+  <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700;800&display=swap"/>
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700;800&display=swap"/></noscript>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%23c9a84c'/><text x='50' y='70' font-size='56' text-anchor='middle' fill='%230a0a0a' font-family='Georgia,serif'>M</text></svg>"/>
+  <meta name="theme-color" content="#0a0a0a"/>
+  <meta property="og:image" content="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=1200&q=80"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    /* ===== FULL-SCREEN INTRO SPLASH ===== */
+    #intro-splash {
+      position: fixed; inset: 0; z-index: 99999;
+      background: #000;
+      overflow: hidden;
+    }
+    #intro-splash.fade-out {
+      animation: introFadeOut 1.2s cubic-bezier(0.4,0,0.2,1) forwards;
+    }
+    @keyframes introFadeOut {
+      0%   { opacity: 1; }
+      100% { opacity: 0; pointer-events: none; }
+    }
+
+    /* Full-screen background video */
+    #intro-video {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+      filter: saturate(1.5) hue-rotate(330deg) contrast(1.08) brightness(1.05);
+    }
+
+    /* Dark gradient overlay so logo/text pops */
+    #intro-overlay {
+      position: absolute; inset: 0; z-index: 2;
+      background:
+        linear-gradient(to bottom,
+          rgba(0,0,0,0.55) 0%,
+          rgba(0,0,0,0.15) 40%,
+          rgba(0,0,0,0.15) 60%,
+          rgba(0,0,0,0.70) 100%);
+    }
+
+    /* Centred logo container */
+    #intro-logo {
+      position: absolute; inset: 0; z-index: 3;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center;
+    }
+
+    /* Emblem circle — scales in */
+    #intro-emblem {
+      width: 90px; height: 90px;
+      background: linear-gradient(135deg, #c9a84c, #f0d080, #c9a84c);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.8rem; font-weight: 400; color: #0a0a0a;
+      box-shadow: 0 0 40px rgba(201,168,76,0.7), 0 0 80px rgba(201,168,76,0.3);
+      opacity: 0;
+      animation: emblemIn 0.9s cubic-bezier(0.34,1.56,0.64,1) 0.4s forwards;
+      margin-bottom: 20px;
+    }
+    @keyframes emblemIn {
+      from { opacity: 0; transform: scale(0.3) rotate(-15deg); }
+      to   { opacity: 1; transform: scale(1) rotate(0deg); }
+    }
+
+    /* Gold divider line — expands from centre */
+    #intro-divider {
+      width: 0; height: 1px;
+      background: linear-gradient(to right, transparent, #c9a84c, #f0d080, #c9a84c, transparent);
+      margin: 16px auto 20px;
+      animation: dividerExpand 0.8s ease 1.4s forwards;
+    }
+    @keyframes dividerExpand {
+      from { width: 0; opacity: 0; }
+      to   { width: 220px; opacity: 1; }
+    }
+
+    /* Main title — letters slide up one by one */
+    #intro-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 6vw, 4.5rem);
+      font-weight: 300; color: #fff;
+      letter-spacing: 0.3em; text-transform: uppercase;
+      line-height: 1;
+      overflow: hidden;
+    }
+    #intro-title .letter {
+      display: inline-block;
+      opacity: 0;
+      animation: letterRise 0.5s cubic-bezier(0.22,1,0.36,1) forwards;
+    }
+
+    /* Subtitle — fades in */
+    #intro-subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(0.75rem, 1.8vw, 1rem);
+      color: rgba(201,168,76,0.9);
+      letter-spacing: 0.45em; text-transform: uppercase;
+      opacity: 0;
+      animation: subtitleIn 0.8s ease 2.4s forwards;
+      margin-top: 10px;
+    }
+    @keyframes letterRise {
+      from { opacity: 0; transform: translateY(40px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes subtitleIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- ===== VIDEO INTRO SPLASH ===== -->
+<div id="intro-splash" role="dialog" aria-modal="true" aria-label="Mirj Rentals intro">
+  <video id="intro-video" autoplay muted playsinline webkit-playsinline preload="auto">
+    <source src="intro.mp4" type="video/mp4"/>
+  </video>
+  <div id="intro-overlay"></div>
+  <div id="intro-logo">
+    <div id="intro-emblem">M</div>
+    <div id="intro-divider"></div>
+    <div id="intro-title">
+      <span class="letter">M</span><span class="letter">I</span><span class="letter">R</span><span class="letter">J</span><span class="letter" style="display:inline-block;width:0.35em"> </span><span class="letter">R</span><span class="letter">E</span><span class="letter">N</span><span class="letter">T</span><span class="letter">A</span><span class="letter">L</span><span class="letter">S</span>
+    </div>
+    <div id="intro-subtitle">Premium Event Hire</div>
+  </div>
+</div>
+
+<script>
+  (function() {
+    var splash    = document.getElementById('intro-splash');
+    var vid       = document.getElementById('intro-video');
+    var dismissed = false;
+    var fallback;
+
+    function dismissIntro() {
+      if (dismissed) return;
+      dismissed = true;
+      clearTimeout(fallback);
+      splash.classList.add('fade-out');
+      setTimeout(function() { splash.style.display = 'none'; }, 1200);
+    }
+
+    /* Stagger each letter: start at 1.6s, +0.07s per letter */
+    document.querySelectorAll('#intro-title .letter').forEach(function(el, i) {
+      el.style.animationDelay = (1.6 + i * 0.07) + 's';
+    });
+
+    if (vid) {
+      /* Speed video up 1.5× */
+      vid.playbackRate = 1.5;
+      vid.addEventListener('canplay', function() { vid.playbackRate = 1.5; });
+      vid.addEventListener('ended', dismissIntro);
+      /* Fallback: auto-dismiss after 10s */
+      fallback = setTimeout(dismissIntro, 10000);
+    } else {
+      fallback = setTimeout(dismissIntro, 10000);
+    }
+  })();
+</script>
+
+<!-- ===== NAV ===== -->
+<header>
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-emblem">M</div>
+      <div class="logo-text">
+        <span class="logo-main">Mirj Rentals</span>
+        <span class="logo-sub">Premium Event Hire</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li class="has-dropdown">
+        <a href="#">Catalogue ▾</a>
+        <div class="dropdown">
+          <a href="tents.html">Tents & Structures</a>
+          <a href="chairs.html">Chairs & Seating</a>
+          <a href="tables.html">Tables</a>
+          <a href="photobooth.html">Photo Booths & Stages</a>
+          <a href="food-stands.html">Cake & Food Stands</a>
+        </div>
+      </li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="index.html#contact" class="nav-cta">Request a Quote</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobileMenu">&#9776;</button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="tents.html">Tents & Structures</a>
+    <a href="chairs.html">Chairs & Seating</a>
+    <a href="tables.html">Tables</a>
+    <a href="photobooth.html">Photo Booths & Stages</a>
+    <a href="food-stands.html">Cake & Food Stands</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+</header>
+
+<!-- ===== HOME HERO ===== -->
+<section class="home-hero">
+  <div class="hero-bg"></div>
+  <div class="hero-bg-overlay"></div>
+  <div class="home-hero-content">
+    <div class="hero-eyebrow">
+      <div class="hero-line"></div>
+      <span>Premium Event Hire · South Africa</span>
+    </div>
+    <h1>
+      Every Detail<br/>
+      <em>Perfectly</em> <strong>Curated</strong>
+    </h1>
+    <p class="hero-sub">From intimate garden gatherings to grand marquee celebrations — Mirj Rentals delivers exceptional equipment and service that transforms your vision into reality.</p>
+    <div class="hero-buttons">
+      <a href="#contact" class="btn btn-gold">Request a Quote</a>
+      <a href="tents.html" class="btn btn-outline">View Catalogue</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num">500+</div><div class="label">Events Hosted</div></div>
+      <div class="hero-stat"><div class="num">100%</div><div class="label">Satisfaction Guaranteed</div></div>
+      <div class="hero-stat"><div class="num">24hr</div><div class="label">Response Time</div></div>
+      <div class="hero-stat"><div class="num">20+</div><div class="label">Rental Categories</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CATALOGUE TILES ===== -->
+<section class="home-services" id="catalogue">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="section-tag">Our Catalogue</p>
+      <h2>Everything You Need for an <em>Extraordinary</em> Event</h2>
+      <div class="section-divider"></div>
+      <p>Browse our curated collection of premium rental equipment, delivered and installed by our professional team.</p>
+    </div>
+  </div>
+  <div class="services-grid-home">
+    <a href="tents.html" class="service-tile reveal">
+      <div class="service-tile-bg" style="background-image:url('images/marquee-1.jpg')"></div>
+      <div class="service-tile-overlay"></div>
+      <div class="service-tile-content">
+        <span class="service-tile-tag">Structure Hire</span>
+        <h3>Tents & Structures</h3>
+        <p>Gazebos, Cabanas, Stretch Tents & Marquees</p>
+        <span class="service-tile-arrow">Explore Collection →</span>
+      </div>
+    </a>
+    <a href="chairs.html" class="service-tile reveal reveal-delay-1">
+      <div class="service-tile-bg" style="background-image:url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=1200&q=80')"></div>
+      <div class="service-tile-overlay"></div>
+      <div class="service-tile-content">
+        <span class="service-tile-tag">Seating</span>
+        <h3>Chairs & Benches</h3>
+        <p>Tiffany Chairs, Foldable & Stackable Seating</p>
+        <span class="service-tile-arrow">Explore Collection →</span>
+      </div>
+    </a>
+    <a href="tables.html" class="service-tile reveal reveal-delay-2">
+      <div class="service-tile-bg" style="background-image:url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1200&q=80')"></div>
+      <div class="service-tile-overlay"></div>
+      <div class="service-tile-content">
+        <span class="service-tile-tag">Tables</span>
+        <h3>Tables</h3>
+        <p>Round, Foldable, Cocktail & Display Tables</p>
+        <span class="service-tile-arrow">Explore Collection →</span>
+      </div>
+    </a>
+    <a href="photobooth.html" class="service-tile reveal reveal-delay-3">
+      <div class="service-tile-bg" style="background-image:url('https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=1200&q=80')"></div>
+      <div class="service-tile-overlay"></div>
+      <div class="service-tile-content">
+        <span class="service-tile-tag">Entertainment & Décor</span>
+        <h3>Photo Booths & Stages</h3>
+        <p>Magazine Booths, Backdrop Arcs & Stage Platforms</p>
+        <span class="service-tile-arrow">Explore Collection →</span>
+      </div>
+    </a>
+    <a href="food-stands.html" class="service-tile reveal reveal-delay-4">
+      <div class="service-tile-bg" style="background-image:url('https://images.unsplash.com/photo-1535254973040-607b474cb50d?w=1200&q=80')"></div>
+      <div class="service-tile-overlay"></div>
+      <div class="service-tile-content">
+        <span class="service-tile-tag">Display & Presentation</span>
+        <h3>Food Pedestals & Displays</h3>
+        <p>Step Displays, Food Pedestals & Pyramid Stands</p>
+        <span class="service-tile-arrow">Explore Collection →</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ===== WHY MIRJ ===== -->
+<section id="about">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="section-tag">Why Choose Us</p>
+      <h2>The <em>Mirj</em> Standard of Excellence</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="why-grid">
+      <div class="why-item reveal">
+        <div class="why-icon">🏅</div>
+        <h4>Premium Quality</h4>
+        <p>All our equipment is meticulously maintained, cleaned, and inspected before every hire. Your event deserves nothing less.</p>
+      </div>
+      <div class="why-item reveal reveal-delay-1">
+        <div class="why-icon">🚚</div>
+        <h4>Professional Delivery</h4>
+        <p>Our experienced team handles full delivery, professional setup, and post-event collection — you simply enjoy the occasion.</p>
+      </div>
+      <div class="why-item reveal reveal-delay-2">
+        <div class="why-icon">📋</div>
+        <h4>Guaranteed Availability</h4>
+        <p>Our advanced booking system ensures your items are reserved exclusively for your date. No double-bookings, ever.</p>
+      </div>
+      <div class="why-item reveal reveal-delay-3">
+        <div class="why-icon">💬</div>
+        <h4>Personalised Service</h4>
+        <p>Jane, our event consultant, is available to guide you through every detail — from initial enquiry to final setup.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="testimonials-section">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="section-tag">Client Testimonials</p>
+      <h2>What Our Clients <em>Say</em></h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial reveal">
+        <div class="star-row">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <p>Mirj Rentals transformed our outdoor wedding into something from a magazine. The stretch tent was breathtaking and the team was professional from start to finish. Jane guided us every step of the way.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">L</div>
+          <div><div class="author-name">Lerato & Sipho M.</div><div class="author-event">Wedding · 250 Guests</div></div>
+        </div>
+      </div>
+      <div class="testimonial reveal reveal-delay-1">
+        <div class="star-row">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <p>The marquee we hired for our corporate gala was impeccable. Delivery was on time, setup was faster than expected, and the quality of the chairs and décor elevated the entire event.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">T</div>
+          <div><div class="author-name">Thabo R.</div><div class="author-event">Corporate Gala · 180 Guests</div></div>
+        </div>
+      </div>
+      <div class="testimonial reveal reveal-delay-2">
+        <div class="star-row">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <p>The photo booth was an absolute hit at my daughter's 21st! Guests are still talking about it. Easy to book, perfect condition, and the team was charming. Highly recommend Mirj Rentals!</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">N</div>
+          <div><div class="author-name">Nomsa K.</div><div class="author-event">21st Birthday · 80 Guests</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta-band">
+  <h2>Ready to Create Something <em style="font-style:italic;">Unforgettable</em>?</h2>
+  <p>Speak with Jane today and let us help you plan your perfect event.</p>
+  <a href="#contact" class="btn btn-white">Start Planning Now</a>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="contact-section" id="contact">
+  <div class="container">
+    <div class="contact-inner">
+      <div class="contact-info reveal">
+        <p class="section-tag">Get In Touch</p>
+        <h2>Request a <em>Quote</em></h2>
+        <div class="section-divider"></div>
+        <p>Fill in the form and our team will respond within 24 hours with a personalised quote. Alternatively, chat with Jane right now for an instant assessment.</p>
+        <div class="contact-details">
+          <div class="contact-detail">
+            <div class="contact-detail-icon">📞</div>
+            <div class="contact-detail-text"><strong>Phone</strong><span>066 227 1571</span></div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon">✉️</div>
+            <div class="contact-detail-text"><strong>Email</strong><span>mirjtraders@gmail.com</span></div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon">📍</div>
+            <div class="contact-detail-text"><strong>Address</strong><span>23 Andrews Road, Newfields, Athlone, Cape Town</span></div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon">🕐</div>
+            <div class="contact-detail-text"><strong>Hours</strong><span>Mon–Sat: 08:00 – 18:00</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="booking-form reveal reveal-delay-1">
+        <h3>Request a Quote</h3>
+        <p style="font-size:0.82rem;color:#999;margin-bottom:18px">Fill in all fields for an accurate quote — the more detail you give, the faster we can respond.</p>
+        <form id="bookingForm">
+
+          <!-- Contact details -->
+          <div class="form-row">
+            <div class="form-group"><label for="f-name">Full Name *</label><input id="f-name" type="text" name="name" placeholder="Your full name" required/></div>
+            <div class="form-group"><label for="f-phone">Phone Number *</label><input id="f-phone" type="tel" name="phone" placeholder="e.g. 082 000 0000" required/></div>
+          </div>
+          <div class="form-group"><label for="f-email">Email Address *</label><input id="f-email" type="email" name="email" placeholder="your@email.com" required/></div>
+
+          <!-- Event details -->
+          <div class="form-row" style="margin-top:6px">
+            <div class="form-group"><label for="f-date">Event Date *</label><input id="f-date" type="date" name="eventDate" required/></div>
+            <div class="form-group"><label for="f-guests">Guest Count *</label><input id="f-guests" type="number" name="guestCount" placeholder="e.g. 80" min="1" required/></div>
+          </div>
+          <div class="form-group">
+            <label for="f-type">Type of Event *</label>
+            <select id="f-type" name="eventType" required>
+              <option value="" disabled selected>Select event type</option>
+              <option>Wedding / Reception</option>
+              <option>Corporate Function</option>
+              <option>Birthday Celebration</option>
+              <option>Baby Shower</option>
+              <option>Engagement Party</option>
+              <option>Graduation</option>
+              <option>School Function</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="f-address">Venue / Event Address *</label>
+            <input id="f-address" type="text" name="address" placeholder="Full address where the event will be held" required/>
+          </div>
+
+          <!-- Items needed -->
+          <div class="form-group">
+            <label for="f-message">Equipment Needed &amp; Additional Notes *</label>
+            <textarea id="f-message" name="message" rows="4" placeholder="e.g. Stretch tent 6×12, 80 white chairs, photobooth, food stands — and any other requirements or questions." required></textarea>
+          </div>
+          <p style="font-size:0.75rem;color:#777;margin-bottom:14px">📋 Our team will prepare a detailed quotation and contact you within 24 hours.</p>
+          <button type="submit" class="btn btn-gold full-width">Send Quote Request →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand footer-col">
+      <a href="index.html" class="nav-logo" style="text-decoration:none">
+        <div class="logo-emblem">M</div>
+        <div class="logo-text"><span class="logo-main">Mirj Rentals</span><span class="logo-sub">Premium Event Hire</span></div>
+      </a>
+      <p>Delivering exceptional event rental equipment and personalised service across Cape Town and surrounds since 2018.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Catalogue</h4>
+      <ul>
+        <li><a href="tents.html">Tents & Structures</a></li>
+        <li><a href="chairs.html">Chairs & Seating</a></li>
+        <li><a href="tables.html">Tables</a></li>
+        <li><a href="photobooth.html">Photo Booths & Stages</a></li>
+        <li><a href="food-stands.html">Cake & Food Stands</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="index.html#about">About Us</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="admin.html">Admin Portal</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a (href="tel:+27662271571">066 227 1571</a></li>
+        <li><a href="mailto:mirjtraders@gmail.com">mirjtraders@gmail.com</a></li>
+        <li>Athlone, Cape Town</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Mirj Rentals. All rights reserved.</p>
+    <div class="footer-legal">
+      <span>Privacy Policy</span>
+      <span>Terms & Conditions</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== JANE CHAT ===== -->
+<div class="chat-launcher" id="chatLauncher">
+  <div class="chat-window" id="chatWindow">
+    <div class="chat-header">
+      <div class="chat-header-avatar">J</div>
+      <div class="chat-header-info">
+        <strong>Jane — Event Consultant</strong>
+        <div class="chat-header-status">● Available now</div>
+      </div>
+      <button class="chat-header-close" id="chatClose">✕</button>
+    </div>
+    <div class="chat-messages" id="janeMessages"></div>
+    <div class="chat-quick-btns" id="janeQuickBtns">
+      <button class="jane-quick" data-msg="Design a layout for 80 guests">Layout for 80 guests</button>
+      <button class="jane-quick" data-msg="What do I need for 50 guests?">Recommend for 50 guests</button>
+      <button class="jane-quick" data-msg="I'd like to get a quote">Get a quote</button>
+    </div>
+    <div class="chat-input-area">
+      <input type="text" id="janeInput" placeholder="Type your message…" autocomplete="off" aria-label="Chat with Jane — type your message"/>
+      <button class="chat-send-btn" id="janeSendBtn">Send</button>
+    </div>
+  </div>
+  <button class="chat-bubble-btn" id="chatBubbleBtn">
+    <div class="chat-avatar-small">J</div>
+    <span>Chat with Jane</span>
+    <div class="chat-notif-dot"></div>
+  </button>
+</div>
+
+<!-- ===== SUCCESS MODAL ===== -->
+<div class="modal-overlay hidden" id="responseModal">
+  <div class="modal-box">
+    <div class="modal-icon">✉️</div>
+    <h3 id="modalTitle">Enquiry Submitted</h3>
+    <p id="modalBody">Thank you! Our team will be in touch within 24 hours.</p>
+    <button class="btn btn-gold" id="closeModal">Close</button>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="js/emailjs-config.js"></script>
+<script src="js/bob.js" defer></script>
+<script src="js/jane.js" defer></script>
+<script src="js/main.js" defer></script>
+<script src="js/analytics.js" defer></script>
+</body>
+</html>

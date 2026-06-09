@@ -1,0 +1,30 @@
+# Mirj Rentals — Netlify HTTP Headers
+# Security + aggressive caching for static assets
+
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+# Static assets — cache for 1 year (immutable)
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/js/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/style.css
+  Cache-Control: public, max-age=31536000, immutable
+
+# HTML pages — always revalidate (so deploys take effect immediately)
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Service worker — never cache (so updates install immediately)
+/sw.js
+  Cache-Control: no-store
+
+# Manifest — short cache
+/manifest.json
+  Cache-Control: public, max-age=86400

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T8TBZ345D3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-T8TBZ345D3');
+  </script>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cake & Food Stands — Mirj Rentals</title>
+  <meta name="description" content="Hire step displays, food pedestals, table risers and pyramid display stands for weddings and events. Bundle deals available across Cape Town."/>
+  <!-- Fonts — async (non-render-blocking) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="preconnect" href="https://images.unsplash.com"/>
+  <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700;800&display=swap"/>
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700;800&display=swap"/></noscript>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%23c9a84c'/><text x='50' y='70' font-size='56' text-anchor='middle' fill='%230a0a0a' font-family='Georgia,serif'>M</text></svg>"/>
+  <meta name="theme-color" content="#0a0a0a"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .food-hero-bg { background-image:url('https://images.unsplash.com/photo-1535254973040-607b474cb50d?w=1600&q=80'); }
+    .stand-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:2px; }
+    .stand-card { background:var(--card-dark); border:1px solid var(--border); transition:border-color 0.3s; overflow:hidden; }
+    .stand-card:hover { border-color:var(--border-gold); }
+    .stand-img { width:100%; height:260px; object-fit:cover; filter:brightness(0.85); transition:filter 0.4s,transform 0.5s; display:block; }
+    .stand-card:hover .stand-img { filter:brightness(1); transform:scale(1.04); }
+    .stand-img-wrap { overflow:hidden; }
+    .stand-body { padding:26px 28px 30px; }
+    .stand-name { font-family:var(--font-main); font-size:1.6rem; font-weight:400; color:var(--white); margin-bottom:6px; }
+    .stand-price { color:var(--gold); font-weight:700; font-size:1rem; margin-bottom:10px; }
+    .stand-desc { color:var(--text-dim); font-size:0.83rem; line-height:1.65; margin-bottom:16px; }
+    .deal-box { background:rgba(201,168,76,0.08); border:1px solid var(--border-gold); padding:12px 16px; margin-bottom:18px; }
+    .deal-box p { font-size:0.8rem; color:var(--gold-light); line-height:1.5; }
+    .deal-box strong { color:var(--gold); }
+    /* Two-photo gallery for stand cards */
+    .stand-photo-gallery { display:grid; grid-template-columns:1fr 1fr; gap:2px; height:260px; overflow:hidden; }
+    .stand-photo-gallery img { width:100%; height:260px; object-fit:cover; object-position:center; filter:brightness(0.85); transition:filter 0.4s,transform 0.5s; display:block; }
+    .stand-card:hover .stand-photo-gallery img { filter:brightness(1); transform:scale(1.04); }
+    .combo-section { background:var(--off-black); }
+    .combo-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; }
+    .combo-card { background:var(--card-dark); border:1px solid var(--border); padding:28px 24px; text-align:center; transition:border-color 0.3s; }
+    .combo-card:hover { border-color:var(--border-gold); }
+    .combo-icon { font-size:2.5rem; margin-bottom:12px; }
+    .combo-card h4 { font-family:var(--font-main); font-size:1.2rem; color:var(--white); font-weight:400; margin-bottom:6px; }
+    .combo-card p { color:var(--text-dim); font-size:0.8rem; margin-bottom:14px; line-height:1.5; }
+    .combo-price { color:var(--gold); font-weight:700; font-size:1rem; margin-bottom:14px; display:block; }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-emblem">M</div>
+      <div class="logo-text"><span class="logo-main">Mirj Rentals</span><span class="logo-sub">Premium Event Hire</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="has-dropdown"><a href="#" class="active">Catalogue ▾</a>
+        <div class="dropdown">
+          <a href="tents.html">Tents & Structures</a>
+          <a href="chairs.html">Chairs & Seating</a>
+          <a href="tables.html">Tables</a>
+          <a href="photobooth.html">Photo Booths & Stages</a>
+          <a href="food-stands.html" class="active">Cake & Food Stands</a>
+        </div>
+      </li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="index.html#contact" class="nav-cta">Request a Quote</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobileMenu">&#9776;</button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="tents.html">Tents & Structures</a>
+    <a href="chairs.html">Chairs & Seating</a>
+    <a href="tables.html">Tables</a>
+    <a href="photobooth.html">Photo Booths & Stages</a>
+    <a href="food-stands.html">Cake & Food Stands</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="page-hero-bg food-hero-bg"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Cake & Food Stands</span></div>
+    <h1>Cake &amp; Food <em>Stands</em></h1>
+    <p>Elegant presentation solutions that elevate your dessert table, buffet, and centrepieces into a visual masterpiece.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="section-tag">Display & Presentation</p>
+      <h2>Presentation That <em>Impresses</em></h2>
+      <div class="section-divider"></div>
+      <p>The right display can transform a dessert table into a showpiece. Our stands are elegant, sturdy, and available in quantities to suit any event.</p>
+    </div>
+
+    <div class="stand-grid">
+
+      <!-- Step Displays -->
+      <div class="stand-card reveal">
+        <div class="stand-img-wrap">
+          <img class="stand-img"
+            src="images/step-display-new.png"
+            alt="Step Display — elegant tiered cupcake display" loading="lazy" decoding="async"/>
+        </div>
+        <div class="stand-body">
+          <div class="product-tag">Centrepiece</div>
+          <div class="stand-name">Step Display</div>
+          <div class="stand-price">R50 per stand / per day</div>
+          <div class="stand-desc">Elegant cake display stands that add height and visual impact to your dessert table. Perfect for wedding cakes, birthday cakes, and cupcake towers. Available in a range of styles. Up to 4 available.</div>
+          <div class="deal-box">
+            <p>💡 Pro Tip: Pair with our Pyramid Stand and Food Pedestals to create a stunning tiered dessert display.</p>
+          </div>
+          <a href="index.html#contact" class="btn btn-gold">Request a Quote</a>
+        </div>
+      </div>
+
+      <!-- Food Pedestals / Table Risers -->
+      <div class="stand-card reveal reveal-delay-1">
+        <div class="stand-img-wrap">
+          <img class="stand-img"
+            src="images/food-risers-new.webp"
+            alt="Food Pedestals — colourful buffet display with white pedestal stands" loading="lazy" decoding="async"/>
+        </div>
+        <div class="stand-body">
+          <div class="product-tag">Best Value</div>
+          <div class="stand-name">Food Pedestals / Table Risers</div>
+          <div class="stand-price">R50 each · R120 for 3 / per day</div>
+          <div class="stand-desc">Versatile food pedestals and table risers that work beautifully for canapés, desserts, fruit displays, and small centrepieces. Mix heights for a visually dynamic table setup. Up to 15 units available.</div>
+          <div class="deal-box">
+            <p><strong>🏷️ Bundle Deal:</strong> Hire 3 pedestals for just R120 per day — the perfect complement to any dessert or catering table.</p>
+          </div>
+          <a href="index.html#contact" class="btn btn-gold">Request a Quote</a>
+        </div>
+      </div>
+
+      <!-- Pyramid Stand -->
+      <div class="stand-card reveal reveal-delay-2">
+        <div class="stand-img-wrap">
+          <img class="stand-img"
+            src="images/pyramid-stand-new.png"
+            alt="Pyramid Stand — three-tier white wooden display with donuts and pastries" loading="lazy" decoding="async"/>
+        </div>
+        <div class="stand-body">
+          <div class="product-tag">Statement Piece</div>
+          <div class="stand-name">Pyramid Stand</div>
+          <div class="stand-price">R50 each · R90 for 2 / per day</div>
+          <div class="stand-desc">A dramatic multi-tiered pyramid display stand — perfect for showing off macaron towers, cake pops, petit fours, or any small confections. Creates instant visual impact and works beautifully in photographs. Up to 5 available.</div>
+          <div class="deal-box">
+            <p><strong>🏷️ Pair Deal:</strong> Hire 2 Pyramid Stands for just R90 per day. Perfect for: Weddings, 21sts, Sweet Tables & Candy Bars.</p>
+          </div>
+          <a href="index.html#contact" class="btn btn-gold">Request a Quote</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- COMBO PACKAGES -->
+<section class="combo-section">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="section-tag">Suggested Combinations</p>
+      <h2>Popular Display <em>Packages</em></h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="combo-grid">
+      <div class="combo-card reveal">
+        <div class="combo-icon">🎂</div>
+        <h4>Classic Cake Display</h4>
+        <p>1× Step Display + 3× Food Pedestals</p>
+        <span class="combo-price">From R170 / day</span>
+        <a href="index.html#contact" class="btn btn-outline" style="font-size:0.7rem;padding:9px 20px">Enquire</a>
+      </div>
+      <div class="combo-card reveal reveal-delay-1">
+        <div class="combo-icon">🍬</div>
+        <h4>Sweet Table Package</h4>
+        <p>1× Pyramid Stand + 6× Food Pedestals + 1× Step Display</p>
+        <span class="combo-price">From R340 / day</span>
+        <a href="index.html#contact" class="btn btn-outline" style="font-size:0.7rem;padding:9px 20px">Enquire</a>
+      </div>
+      <div class="combo-card reveal reveal-delay-2">
+        <div class="combo-icon">👑</div>
+        <h4>Premium Dessert Showcase</h4>
+        <p>4× Step Displays + 5× Pyramid Stands + 15× Food Pedestals</p>
+        <span class="combo-price">From R1,050 / day</span>
+        <a href="index.html#contact" class="btn btn-outline" style="font-size:0.7rem;padding:9px 20px">Enquire</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <h2>Building your perfect <em style="font-style:italic">dessert table</em>?</h2>
+  <p>Jane can help you design a display setup that matches your event theme and budget perfectly.</p>
+  <button onclick="document.getElementById('chatBubbleBtn').click()" class="btn btn-white">Chat with Jane</button>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand footer-col">
+      <a href="index.html" class="nav-logo" style="text-decoration:none">
+        <div class="logo-emblem">M</div>
+        <div class="logo-text"><span class="logo-main">Mirj Rentals</span><span class="logo-sub">Premium Event Hire</span></div>
+      </a>
+      <p>Delivering exceptional event rental equipment and personalised service across Cape Town and surrounds since 2018.</p>
+    </div>
+    <div class="footer-col"><h4>Catalogue</h4><ul>
+      <li><a href="tents.html">Tents & Structures</a></li>
+      <li><a href="chairs.html">Chairs & Seating</a></li>
+      <li><a href="tables.html">Tables</a></li>
+      <li><a href="photobooth.html">Photo Booths & Stages</a></li>
+      <li><a href="food-stands.html">Cake & Food Stands</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Company</h4><ul>
+      <li><a href="index.html#about">About Us</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="admin.html">Admin Portal</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul>
+      <li><a (href="tel:+27662271571">066 227 1571</a></li>
+      <li><a href="mailto:mirjtraders@gmail.com">mirjtraders@gmail.com</a></li>
+      <li>Athlone, Cape Town</li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Mirj Rentals. All rights reserved.</p>
+    <div class="footer-legal">
+      <span>Privacy Policy</span>
+      <span>Terms & Conditions</span>
+    </div>
+  </div>
+</footer>
+
+<div class="chat-launcher" id="chatLauncher">
+  <div class="chat-window" id="chatWindow">
+    <div class="chat-header">
+      <div class="chat-header-avatar">J</div>
+      <div class="chat-header-info"><strong>Jane — Event Consultant</strong><div class="chat-header-status">● Available now</div></div>
+      <button class="chat-header-close" id="chatClose">✕</button>
+    </div>
+    <div class="chat-messages" id="janeMessages"></div>
+    <div class="chat-quick-btns" id="janeQuickBtns">
+      <button class="jane-quick" data-msg="I need step displays for my wedding">Step display hire</button>
+      <button class="jane-quick" data-msg="Tell me about food pedestals">Food pedestals</button>
+      <button class="jane-quick" data-msg="How much is the pyramid stand?">Pyramid stand price</button>
+    </div>
+    <div class="chat-input-area">
+      <input type="text" id="janeInput" placeholder="Type your message…" autocomplete="off" aria-label="Chat with Jane — type your message"/>
+      <button class="chat-send-btn" id="janeSendBtn">Send</button>
+    </div>
+  </div>
+  <button class="chat-bubble-btn" id="chatBubbleBtn">
+    <div class="chat-avatar-small">J</div>
+    <span>Chat with Jane</span>
+    <div class="chat-notif-dot"></div>
+  </button>
+</div>
+<div class="modal-overlay hidden" id="responseModal">
+  <div class="modal-box"><div class="modal-icon">✉️</div><h3 id="modalTitle">Enquiry Submitted</h3><p id="modalBody">Our team will be in touch within 24 hours.</p><button class="btn btn-gold" id="closeModal">Close</button></div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="js/emailjs-config.js"></script>
+<script src="js/bob.js" defer></script>
+<script src="js/jane.js" defer></script>
+<script src="js/main.js" defer></script>
+<script src="js/analytics.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T8TBZ345D3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-T8TBZ345D3');
+  </script>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tables for Hire — Mirj Rentals</title>
+  <meta name="description" content="Premium table hire for events — display tables, cocktail tables, foldable tables and round tables. Tablecloths included on selected options. Cape Town delivery."/>
+  <!-- Fonts — async (non-render-blocking) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="preconnect" href="https://images.unsplash.com"/>
+  <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700;800&display=swap"/>
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700;800&display=swap"/></noscript>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%23c9a84c'/><text x='50' y='70' font-size='56' text-anchor='middle' fill='%230a0a0a' font-family='Georgia,serif'>M</text></svg>"/>
+  <meta name="theme-color" content="#0a0a0a"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .tables-hero-bg { background-image: url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1600&q=80'); }
+
+    /* ── Product grid ── */
+    .table-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2px; }
+    .table-card { background: var(--card-dark); border: 1px solid var(--border); overflow: hidden; transition: border-color 0.3s; }
+    .table-card:hover { border-color: var(--border-gold); }
+    .table-img-wrap { overflow: hidden; position: relative; height: 240px; }
+    .table-img { width: 100%; height: 240px; object-fit: cover; filter: brightness(0.85); transition: filter 0.4s, transform 0.5s; display: block; }
+    .table-card:hover .table-img { filter: brightness(1); transform: scale(1.04); }
+
+    .table-body { padding: 24px 26px 28px; }
+    .table-name  { font-family: var(--font-main); font-size: 1.5rem; font-weight: 400; color: var(--white); margin-bottom: 8px; }
+    .table-price { color: var(--gold); font-weight: 700; font-size: 1rem; margin-bottom: 10px; }
+    .table-desc  { color: var(--text-dim); font-size: 0.83rem; line-height: 1.6; margin-bottom: 16px; }
+    .table-spec  { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+    .spec-tag    { font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; background: rgba(201,168,76,0.1); color: var(--gold); padding: 4px 10px; font-weight: 700; }
+
+    /* Includes badge */
+    .includes-badge {
+      background: rgba(201,168,76,0.08);
+      border: 1px solid rgba(201,168,76,0.25);
+      padding: 10px 14px;
+      margin-bottom: 16px;
+      font-size: 0.78rem;
+      color: var(--text-dim);
+    }
+    .includes-badge strong { color: var(--gold); }
+
+    /* ── Calculator ── */
+    .calculator-band { background: var(--off-black); padding: 64px 8%; }
+    .calc-inner      { max-width: 900px; margin: 0 auto; }
+    .calc-grid       { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+    .calc-form       { background: var(--card-dark); border: 1px solid var(--border); padding: 32px; }
+    .calc-result     { background: var(--card-dark); border: 1px solid var(--border-gold); padding: 32px; }
+    .calc-row        { margin-bottom: 18px; }
+    .calc-row label  { display: block; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: 6px; }
+    .calc-row input,
+    .calc-row select { width: 100%; background: var(--black); border: 1px solid var(--border); color: var(--off-white); padding: 12px 16px; font-family: var(--font-sans); font-size: 0.9rem; outline: none; transition: border-color 0.2s; }
+    .calc-row input:focus,
+    .calc-row select:focus { border-color: var(--gold); }
+    .result-line  { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 0.84rem; }
+    .result-line:last-of-type { border-bottom: none; }
+    .result-label { color: var(--text-dim); }
+    .result-value { color: var(--off-white); font-weight: 600; }
+    .result-total { font-family: var(--font-main); font-size: 1.8rem; color: var(--gold); margin-top: 16px; text-align: right; }
+
+    @media(max-width: 768px) { .calc-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-emblem">M</div>
+      <div class="logo-text"><span class="logo-main">Mirj Rentals</span><span class="logo-sub">Premium Event Hire</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="has-dropdown"><a href="#" class="active">Catalogue ▾</a>
+        <div class="dropdown">
+          <a href="tents.html">Tents & Structures</a>
+          <a href="chairs.html">Chairs & Seating</a>
+          <a href="tables.html" class="active">Tables</a>
+          <a href="photobooth.html">Photo Booths & Stages</a>
+          <a href="food-stands.html">Cake & Food Stands</a>
+        </div>
+      </li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="index.html#contact" class="nav-cta">Request a Quote</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobileMenu">&#9776;</button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="tents.html">Tents & Structures</a>
+    <a href="chairs.html">Chairs & Seating</a>
+    <a href="tables.html">Tables</a>
+    <a href="photobooth.html">Photo Booths & Stages</a>
+    <a href="food-stands.html">Cake & Food Stands</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="page-hero-bg tables-hero-bg"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Tables</span></div>
+    <h1>Tables for <em>Every Event</em></h1>
+    <p>From elegant display tables to practical foldable and round dining tables — hire exactly what your event needs, with tablecloths included on selected options.</p>
+  </div>
+</section>
+
+<!-- TABLE COLLECTION -->
+<section>
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="section-tag">Table Collection</p>
+      <h2>Premium <em>Tables</em> for Every Occasion</h2>
+      <div class="section-divider"></div>
+      <p>All tables are cleaned and inspected before each hire. Tablecloths are included with foldable and round tables at no extra charge.</p>
+    </div>
+
+    <div class="table-grid">
+
+      <!-- Display Table -->
+      <div class="table-card reveal">
+        <div class="table-img-wrap">
+          <img class="table-img" src="images/display-table-1.jpg" alt="Display table elegantly set up at an event" fetchpriority="high" loading="eager" decoding="async"/>
+        </div>
+        <div class="table-body">
+          <div class="product-tag">Feature Piece</div>
+          <div class="table-name">Display Table</div>
+          <div class="table-price">R150 per table / per day</div>
+          <div class="table-desc">Our premium display table is the statement piece your event deserves. Perfect as a centrepiece for gift tables, cake tables, signing tables, or merchandise displays. Its elevated finish draws the eye and elevates your décor instantly.</div>
+          <div class="table-spec">
+            <span class="spec-tag">Gift Tables</span>
+            <span class="spec-tag">Cake Table</span>
+            <span class="spec-tag">Signing Table</span>
+            <span class="spec-tag">Display</span>
+          </div>
+          <a href="index.html#contact" class="btn btn-gold">Request a Quote</a>
+        </div>
+      </div>
+
+      <!-- Cocktail Tables -->
+      <div class="table-card reveal reveal-delay-1">
+        <div class="table-img-wrap">
+          <img class="table-img" src="images/cocktail-tables-1.jpg" alt="Cocktail tables at a stylish evening event" loading="lazy" decoding="async"/>
+        </div>
+        <div class="table-body">
+          <div class="product-tag">Most Popular</div>
+          <div class="table-name">Cocktail Tables</div>
+          <div class="table-price">R80 per table / per day</div>
+          <div class="table-desc">Tall poseur-height cocktail tables that encourage mingling and create an effortlessly sophisticated atmosphere. Ideal for cocktail parties, corporate sundowners, networking events, and as bar-top stations. Guests stand and socialise — no seating required.</div>
+          <div class="table-spec">
+            <span class="spec-tag">Cocktail Events</span>
+            <span class="spec-tag">Sundowners</span>
+            <span class="spec-tag">Corporate</span>
+            <span class="spec-tag">Standing Events</span>
+          </div>
+          <div class="includes-badge">
+            ℹ️ <strong>Note:</strong> Tablecloth not included — pair with our chair covers for a polished finish, or bring your own linen.
+          </div>
+          <a href="index.html#contact" class="btn btn-gold">Request a Quote</a>
+        </div>
+      </div>
+
+      <!-- Foldable Tables -->
+      <div class="table-card reveal reveal-delay-2">
+        <div class="table-img-wrap">
+          <img class="table-img" src="images/foldable-table-1.jpg" alt="Foldable table with black tablecloth and chairs" loading="lazy" decoding="async"/>
+        </div>
+        <div class="table-body">
+          <div class="product-tag">Best Value</div>
+          <div class="table-name">Foldable Tables</div>
+          <div class="table-price">R60 per table / per day</div>
+          <div class="table-desc">Our versatile rectangular foldable trestle tables are a staple for any event — from intimate birthday dinners to large community functions. Lightweight, easy to set up, and sturdy enough for any occasion. Tablecloth included so your setup looks polished from the moment guests arrive.</div>
+          <div class="table-spec">
+            <span class="spec-tag">Weddings</span>
+            <span class="spec-tag">Birthdays</span>
+            <span class="spec-tag">Functions</span>
+            <span class="spec-tag">Any Event</span>
+          </div>
+          <div class="includes-badge">
+            ✅ <strong>Tablecloth included</strong> at no extra charge — white cloth provided with every foldable table hire.
+          </div>
+          <a href="index.html#contact" class="btn btn-gold">Request a Quote</a>
+        </div>
+      </div>
+
+      <!-- Round Tables -->
+      <div class="table-card reveal reveal-delay-3">
+        <div class="table-img-wrap">
+          <img class="table-img" src="images/round-table-1.jpg" alt="Round tables beautifully set for a wedding reception" loading="lazy" decoding="async"/>
+        </div>
+        <div class="table-body">
+          <div class="product-tag">Wedding Favourite</div>
+          <div class="table-name">Round Tables</div>
+          <div class="table-price">R80 per table / per day</div>
+          <div class="table-desc">The classic round table — timeless, elegant, and perfect for creating an intimate atmosphere at any seated event. Seats 8–10 guests comfortably, encourages conversation, and photographs beautifully. The preferred choice for weddings, gala dinners, and upmarket celebrations. Tablecloth included.</div>
+          <div class="table-spec">
+            <span class="spec-tag">Seats 8–10</span>
+            <span class="spec-tag">Weddings</span>
+            <span class="spec-tag">Gala Dinners</span>
+            <span class="spec-tag">Celebrations</span>
+          </div>
+          <div class="includes-badge">
+            ✅ <strong>Tablecloth included</strong> at no extra charge — white cloth provided with every round table hire.
+          </div>
+          <a href="index.html#contact" class="btn btn-gold">Request a Quote</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- COMBO BANNER -->
+<section style="background:var(--off-black); padding:56px 8%">
+  <div style="max-width:900px; margin:0 auto">
+    <div class="section-header reveal" style="margin-bottom:36px">
+      <p class="section-tag">Complete Your Setup</p>
+      <h2>Tables &amp; <em>Chairs Together</em></h2>
+      <div class="section-divider"></div>
+      <p>Pair your tables with our chair range for a complete, cohesive look. Mix and match to suit your event style and budget.</p>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:2px" class="reveal">
+      <div style="background:var(--card-dark);border:1px solid var(--border);padding:24px 20px;text-align:center">
+        <div style="font-size:2rem;margin-bottom:8px">🪑</div>
+        <div style="font-family:var(--font-main);font-size:1.1rem;color:var(--white);margin-bottom:4px">Round Table + 8 Tiffany Chairs</div>
+        <div style="color:var(--gold);font-weight:700;margin-bottom:4px">R200 per table set</div>
+        <div style="font-size:0.75rem;color:var(--text-dim)">Tablecloth included</div>
+      </div>
+      <div style="background:var(--card-dark);border:1px solid var(--border);padding:24px 20px;text-align:center">
+        <div style="font-size:2rem;margin-bottom:8px">🍽️</div>
+        <div style="font-family:var(--font-main);font-size:1.1rem;color:var(--white);margin-bottom:4px">Foldable Table + 6 White Chairs</div>
+        <div style="color:var(--gold);font-weight:700;margin-bottom:4px">R150 per table set</div>
+        <div style="font-size:0.75rem;color:var(--text-dim)">Tablecloth included</div>
+      </div>
+      <div style="background:var(--card-dark);border:1px solid var(--border);padding:24px 20px;text-align:center">
+        <div style="font-size:2rem;margin-bottom:8px">🥂</div>
+        <div style="font-family:var(--font-main);font-size:1.1rem;color:var(--white);margin-bottom:4px">Cocktail Tables (×5)</div>
+        <div style="color:var(--gold);font-weight:700;margin-bottom:4px">R400 for 5 tables</div>
+        <div style="font-size:0.75rem;color:var(--text-dim)">Perfect cocktail lounge setup</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TABLE CALCULATOR -->
+<section class="calculator-band">
+  <div class="calc-inner">
+    <div class="section-header reveal" style="margin-bottom:40px">
+      <p class="section-tag">Table Calculator</p>
+      <h2>How Many Tables Do <em>You Need?</em></h2>
+      <div class="section-divider"></div>
+      <p>Use this quick calculator to estimate your table requirements and cost.</p>
+    </div>
+    <div class="calc-grid">
+      <div class="calc-form reveal">
+        <div class="calc-row">
+          <label>Number of Guests</label>
+          <input type="number" id="guestCount" placeholder="e.g. 80" min="1" oninput="calculateTables()"/>
+        </div>
+        <div class="calc-row">
+          <label>Table Type</label>
+          <select id="tableType" onchange="calculateTables()">
+            <option value="round,80,10">Round Tables — R80/table (seats 8–10)</option>
+            <option value="foldable,60,8">Foldable Tables — R60/table (seats 6–8)</option>
+            <option value="cocktail,80,0">Cocktail Tables — R80/table (standing)</option>
+            <option value="display,150,0">Display Table — R150/table</option>
+          </select>
+        </div>
+        <div class="calc-row">
+          <label>Number of Days</label>
+          <input type="number" id="numDays" value="1" min="1" oninput="calculateTables()"/>
+        </div>
+        <button class="btn btn-gold full-width" onclick="calculateTables()">Calculate</button>
+      </div>
+      <div class="calc-result reveal reveal-delay-1">
+        <p class="section-tag" style="margin-bottom:16px">Your Estimate</p>
+        <div id="calcResults">
+          <p style="color:var(--text-dim);font-size:0.85rem">Enter your guest count to see your estimated table requirement and cost.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band">
+  <h2>Need tables for a large event?</h2>
+  <p>Chat with Jane for a personalised table plan, capacity advice, and bulk pricing.</p>
+  <button onclick="document.getElementById('chatBubbleBtn').click()" class="btn btn-white">Chat with Jane</button>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand footer-col">
+      <a href="index.html" class="nav-logo" style="text-decoration:none">
+        <div class="logo-emblem">M</div>
+        <div class="logo-text"><span class="logo-main">Mirj Rentals</span><span class="logo-sub">Premium Event Hire</span></div>
+      </a>
+      <p>Delivering exceptional event rental equipment and personalised service across Cape Town and surrounds since 2018.</p>
+    </div>
+    <div class="footer-col"><h4>Catalogue</h4><ul>
+      <li><a href="tents.html">Tents & Structures</a></li>
+      <li><a href="chairs.html">Chairs & Seating</a></li>
+      <li><a href="tables.html">Tables</a></li>
+      <li><a href="photobooth.html">Photo Booths & Stages</a></li>
+      <li><a href="food-stands.html">Cake & Food Stands</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Company</h4><ul>
+      <li><a href="index.html#about">About Us</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul>
+      <li><a (href="tel:+27662271571">066 227 1571</a></li>
+      <li><a href="mailto:mirjtraders@gmail.com">mirjtraders@gmail.com</a></li>
+      <li>Athlone, Cape Town</li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Mirj Rentals. All rights reserved.</p>
+    <div class="footer-legal">
+      <span>Privacy Policy</span>
+      <span>Terms & Conditions</span>
+    </div>
+  </div>
+</footer>
+
+<!-- JANE CHAT -->
+<div class="chat-launcher" id="chatLauncher">
+  <div class="chat-window" id="chatWindow">
+    <div class="chat-header">
+      <div class="chat-header-avatar">J</div>
+      <div class="chat-header-info"><strong>Jane — Event Consultant</strong><div class="chat-header-status">● Available now</div></div>
+      <button class="chat-header-close" id="chatClose">✕</button>
+    </div>
+    <div class="chat-messages" id="janeMessages"></div>
+    <div class="chat-quick-btns" id="janeQuickBtns">
+      <button class="jane-quick" data-msg="How many tables do I need for 80 guests?">Tables for 80 guests</button>
+      <button class="jane-quick" data-msg="What is the difference between round and foldable tables?">Round vs Foldable</button>
+      <button class="jane-quick" data-msg="I'd like to get a quote for tables">Get a quote</button>
+    </div>
+    <div class="chat-input-area">
+      <input type="text" id="janeInput" placeholder="Type your message…" autocomplete="off" aria-label="Chat with Jane — type your message"/>
+      <button class="chat-send-btn" id="janeSendBtn">Send</button>
+    </div>
+  </div>
+  <button class="chat-bubble-btn" id="chatBubbleBtn">
+    <div class="chat-avatar-small">J</div>
+    <span>Chat with Jane</span>
+    <div class="chat-notif-dot"></div>
+  </button>
+</div>
+
+<div class="modal-overlay hidden" id="responseModal">
+  <div class="modal-box"><div class="modal-icon">✉️</div><h3 id="modalTitle">Enquiry Submitted</h3><p id="modalBody">Our team will be in touch within 24 hours.</p><button class="btn btn-gold" id="closeModal">Close</button></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="js/emailjs-config.js"></script>
+<script src="js/bob.js" defer></script>
+<script src="js/jane.js" defer></script>
+<script src="js/main.js" defer></script>
+<script>
+function calculateTables() {
+  const guests = parseInt(document.getElementById('guestCount').value) || 0;
+  const [type, rate, seatsPerTable] = document.getElementById('tableType').value.split(',');
+  const rateNum = parseInt(rate) || 0;
+  const seats   = parseInt(seatsPerTable) || 0;
+  const days    = parseInt(document.getElementById('numDays').value) || 1;
+
+  if (!guests && type !== 'display') {
+    document.getElementById('calcResults').innerHTML = '<p style="color:var(--text-dim);font-size:0.85rem">Enter your guest count to see your estimated table requirement and cost.</p>';
+    return;
+  }
+
+  let tablesNeeded = 0;
+  let note = '';
+
+  if (type === 'cocktail') {
+    // 1 cocktail table per 6–8 standing guests
+    tablesNeeded = Math.ceil(guests / 7);
+    note = `Based on 1 cocktail table per 7 guests (standing event).`;
+  } else if (type === 'display') {
+    tablesNeeded = 1;
+    note = `Typically 1–2 display tables per event (gift table, cake table, signing table).`;
+  } else {
+    tablesNeeded = Math.ceil(guests / seats);
+    note = `Based on ${seats} guests per table.`;
+  }
+
+  const subtotal  = tablesNeeded * rateNum * days;
+  const typeName  = type === 'round' ? 'Round Tables' : type === 'foldable' ? 'Foldable Tables' : type === 'cocktail' ? 'Cocktail Tables' : 'Display Table';
+  const clothNote = (type === 'round' || type === 'foldable') ? '<p style="font-size:0.72rem;color:var(--gold);margin-top:8px">✅ Tablecloths included at no extra charge</p>' : '';
+
+  document.getElementById('calcResults').innerHTML = `
+    <div class="result-line"><span class="result-label">Table Type</span><span class="result-value">${typeName}</span></div>
+    <div class="result-line"><span class="result-label">Tables Required</span><span class="result-value">${tablesNeeded} tables</span></div>
+    <div class="result-line"><span class="result-label">Rate</span><span class="result-value">R${rateNum} per table / per day</span></div>
+    <div class="result-line"><span class="result-label">Days</span><span class="result-value">${days} day${days > 1 ? 's' : ''}</span></div>
+    <div class="result-total">R${subtotal.toLocaleString()}</div>
+    ${clothNote}
+    <p style="font-size:0.72rem;color:var(--text-dim);margin-top:12px">${note}<br>Delivery &amp; collection quoted separately.</p>
+    <a href="index.html#contact" class="btn btn-gold" style="margin-top:16px;display:block;text-align:center">Request Formal Quote</a>
+  `;
+}
+</script>
+<script src="js/analytics.js" defer></script>
+</body>
+</html>

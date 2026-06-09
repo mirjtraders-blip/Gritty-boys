@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T8TBZ345D3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-T8TBZ345D3');
+  </script>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tents & Structures — Mirj Rentals</title>
+  <meta name="description" content="Hire premium gazebos, cabana tents, stretch tents and marquees for any event. Delivered and installed across Cape Town."/>
+  <!-- Fonts — async (non-render-blocking) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700;800&display=swap"/>
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700;800&display=swap"/></noscript>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%23c9a84c'/><text x='50' y='70' font-size='56' text-anchor='middle' fill='%230a0a0a' font-family='Georgia,serif'>M</text></svg>"/>
+  <meta name="theme-color" content="#0a0a0a"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .tent-hero-bg { background-image: url('images/marquee-1.jpg'); }
+    .tents-intro { background: var(--off-black); }
+    .category-label {
+      font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold);
+      font-weight: 700; padding: 8px 0; border-top: 1px solid var(--border-gold); margin-bottom: 40px;
+    }
+    .tent-size-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(260px,1fr)); gap: 2px; }
+    .size-card {
+      background: var(--card-dark); border: 1px solid var(--border);
+      padding: 28px 24px; transition: border-color 0.3s;
+      position: relative; overflow: hidden;
+    }
+    .size-card:hover { border-color: var(--border-gold); }
+    .size-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(to right, var(--gold), transparent);
+      opacity: 0;transition: opacity 0.3s;
+    }
+    .size-card:hover::before { opacity: 1; }
+    .size-label { font-family: var(--font-main); font-size: 1.8rem; font-weight: 300; color: var(--white); margin-bottom: 6px; }
+    .size-price { font-size: 1.1rem; color: var(--gold); font-weight: 700; margin-bottom: 12px; }
+    .size-detail { color: var(--text-dim); font-size: 0.8rem; line-height: 1.6; }
+    .size-cta { margin-top: 18px; }
+    .quote-builder-panel { background: var(--off-black); border: 1px solid var(--border-gold); padding: 32px; position: sticky; top: 92px; }
+    .two-col-layout { display: grid; grid-template-columns: 1fr 340px; gap: 40px; align-items: start; }
+    .qty-input { width: 60px; background: var(--black); border: 1px solid var(--border); color: var(--white); padding: 5px 8px; font-family: var(--font-sans); font-size: 0.85rem; text-align: center; }
+    .item-row { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); }
+    .item-row:last-child { border-bottom: none; }
+    .item-row label { flex: 1; font-size: 0.82rem; color: var(--off-white); cursor: pointer; }
+    .item-row .item-price { font-size: 0.78rem; color: var(--gold); font-weight: 700; min-width: 80px; text-align: right; }
+    .quote-total-row { display: flex; justify-content: space-between; align-items: center; padding-top: 16px; border-top: 1px solid var(--border-gold); margin-top: 16px; }
+    .quote-total-label { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim); font-weight: 700; }
+    .quote-total-amount { font-family: var(--font-main); font-size: 1.6rem; color: var(--gold); }
+    .quote-lines { min-height: 40px; }
+    .quote-line { font-size: 0.8rem; color: var(--text-dim); padding: 4px 0; border-bottom: 1px solid var(--border); }
+    @media(max-width:1024px){ .two-col-layout{grid-template-columns:1fr;} .quote-builder-panel{position:static;} }
+
+    /* Gazebo gallery */
+    .gazebo-gallery {
+      display: grid; grid-template-rows: 1fr 1fr; gap: 2px;
+      overflow: hidden; flex-shrink: 0; width: 100%; max-width: 420px;
+    }
+    .gazebo-img {
+      width: 100%; height: 210px; object-fit: cover; object-position: center center;
+      filter: brightness(0.88); transition: filter 0.4s, transform 0.5s; display: block;
+    }
+    .gazebo-gallery:hover .gazebo-img { filter: brightness(1); }
+    .product-featured:hover .gazebo-img { transform: scale(1.03); }
+
+    /* Gazebo full-width strip */
+    .gazebo-strip {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-bottom: 2px;
+    }
+    .gazebo-strip img {
+      width: 100%; height: 280px; object-fit: cover; object-position: center center;
+      filter: brightness(0.85); transition: filter 0.4s, transform 0.5s; display: block;
+    }
+    .gazebo-strip img:hover { filter: brightness(1); transform: scale(1.02); }
+
+    /* Cabana gallery */
+    .cabana-gallery {
+      display: grid; grid-template-rows: 1fr 1fr; gap: 2px;
+      overflow: hidden; flex-shrink: 0; width: 100%; max-width: 420px;
+    }
+    .cabana-img {
+      width: 100%; height: 210px; object-fit: cover;
+      filter: brightness(0.88); transition: filter 0.4s, transform 0.5s; display: block;
+    }
+    .cabana-gallery:hover .cabana-img { filter: brightness(1); }
+    .product-featured:hover .cabana-img { transform: scale(1.03); }
+
+    /* Cabana full-width strip below the feature card */
+    .cabana-strip {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 2px;
+    }
+    .cabana-strip img {
+      width: 100%; height: 280px; object-fit: cover;
+      filter: brightness(0.85); transition: filter 0.4s, transform 0.5s; display: block;
+    }
+    .cabana-strip img:hover { filter: brightness(1); transform: scale(1.02); }
+
+    /* Marquee gallery */
+    .marquee-gallery {
+      display: grid; grid-template-rows: 1fr 1fr; gap: 2px;
+      overflow: hidden; flex-shrink: 0; width: 100%; max-width: 420px;
+    }
+    .marquee-img {
+      width: 100%; height: 210px; object-fit: cover; object-position: center top;
+      filter: brightness(0.88); transition: filter 0.4s, transform 0.5s; display: block;
+    }
+    .marquee-gallery:hover .marquee-img { filter: brightness(1); }
+    .product-featured:hover .marquee-img { transform: scale(1.03); }
+
+    /* Marquee full-width strip */
+    .marquee-strip {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 2px;
+    }
+    .marquee-strip img {
+      width: 100%; height: 280px; object-fit: cover; object-position: center top;
+      filter: brightness(0.85); transition: filter 0.4s, transform 0.5s; display: block;
+    }
+    .marquee-strip img:hover { filter: brightness(1); transform: scale(1.02); }
+
+    /* Stretch tent gallery */
+    .stretch-gallery {
+      display: grid; grid-template-rows: 1fr 1fr; gap: 2px;
+      overflow: hidden; flex-shrink: 0; width: 100%; max-width: 420px;
+    }
+    .stretch-img {
+      width: 100%; height: 210px; object-fit: cover; object-position: center center;
+      filter: brightness(0.88); transition: filter 0.4s, transform 0.5s; display: block;
+    }
+    .stretch-gallery:hover .stretch-img { filter: brightness(1); }
+    .product-featured:hover .stretch-img { transform: scale(1.03); }
+
+    /* Stretch tent full-width strip */
+    .stretch-strip {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
+    }
+    .stretch-strip img {
+      width: 100%; height: 280px; object-fit: cover; object-position: center center;
+      filter: brightness(0.85); transition: filter 0.4s, transform 0.5s; display: block;
+    }
+    .stretch-strip img:hover { filter: brightness(1); transform: scale(1.02); }
+
+    @media(max-width:768px){
+      .gazebo-gallery { max-width: 100%; }
+      .gazebo-img { height: 160px; }
+      .gazebo-strip { grid-template-columns: 1fr; }
+      .gazebo-strip img { height: 220px; }
+      .cabana-gallery { max-width: 100%; }
+      .cabana-img { height: 160px; }
+      .cabana-strip { grid-template-columns: 1fr; }
+      .cabana-strip img { height: 220px; }
+      .marquee-gallery { max-width: 100%; }
+      .marquee-img { height: 160px; }
+      .marquee-strip { grid-template-columns: 1fr; }
+      .marquee-strip img { height: 220px; }
+      .stretch-gallery { max-width: 100%; }
+      .stretch-img { height: 160px; }
+      .stretch-strip { grid-template-columns: 1fr; }
+      .stretch-strip img { height: 220px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-emblem">M</div>
+      <div class="logo-text"><span class="logo-main">Mirj Rentals</span><span class="logo-sub">Premium Event Hire</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="has-dropdown"><a href="#" class="active">Catalogue ▾</a>
+        <div class="dropdown">
+          <a href="tents.html" class="active">Tents & Structures</a>
+          <a href="chairs.html">Chairs & Seating</a>
+          <a href="tables.html">Tables</a>
+          <a href="photobooth.html">Photo Booths & Stages</a>
+          <a href="food-stands.html">Cake & Food Stands</a>
+        </div>
+      </li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="index.html#contact" class="nav-cta">Request a Quote</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobileMenu">&#9776;</button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="tents.html">Tents & Structures</a>
+    <a href="chairs.html">Chairs & Seating</a>
+    <a href="tables.html">Tables</a>
+    <a href="photobooth.html">Photo Booths & Stages</a>
+    <a href="food-stands.html">Cake & Food Stands</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-bg tent-hero-bg"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Tents & Structures</span></div>
+    <h1>Tents &amp; <em>Structures</em></h1>
+    <p>From intimate gazebos to grand marquees — our premium structures transform any outdoor space into an extraordinary venue.</p>
+  </div>
+</section>
+
+<!-- MAIN CONTENT -->
+<section>
+  <div class="container">
+    <div class="two-col-layout">
+
+      <!-- LEFT: Products -->
+      <div>
+
+        <!-- GAZEBOS -->
+        <div class="category-label reveal">Aluminium Frame Gazebos</div>
+        <div class="section-header reveal" style="margin-bottom:28px">
+          <h2>Gazebo <em>Hire</em></h2>
+          <div class="section-divider"></div>
+          <p>Lightweight, sturdy aluminium-frame gazebos ideal for markets, functions, and smaller outdoor events. Available in three sizes.</p>
+        </div>
+        <div class="product-featured reveal">
+          <div class="gazebo-gallery">
+            <img class="gazebo-img" src="images/gazebo-1.jpg" alt="Black aluminium gazebo — standalone" loading="lazy" decoding="async"/>
+            <img class="gazebo-img" src="images/gazebo-2.jpg" alt="White gazebo — outdoor event setup" loading="lazy" decoding="async"/>
+          </div>
+          <div class="product-body">
+            <div class="product-tag">Aluminium Frame</div>
+            <h3>Aluminium Gazebos</h3>
+            <p>Our professional-grade aluminium gazebos are rust-resistant, quick to assemble, and ideal for any weather. Available in black or white. Perfect for birthdays, markets, garden parties and corporate days.</p>
+            <table class="price-table">
+              <tr><td>2×2 metre</td><td>R250 per day</td></tr>
+              <tr><td>3×3 metre</td><td>R400 per day</td></tr>
+              <tr><td>3×6 metre</td><td>R600 per day</td></tr>
+            </table>
+            <a href="index.html#contact" class="btn btn-gold">Request a Quote</a>
+          </div>
+        </div>
+        <!-- Gazebo full-width photo strip -->
+        <div class="gazebo-strip reveal" style="margin-top:2px">
+          <img src="images/gazebo-2.jpg" alt="Gazebo outdoor event" loading="lazy" decoding="async"/>
+          <img src="images/gazebo-1.jpg" alt="Gazebo standalone" loading="lazy" decoding="async"/>
+        </div>
+
+        <div class="tent-size-grid" style="margin-top:2px; margin-bottom:56px">
+          <div class="size-card reveal">
+            <div class="size-label">2×2 m</div>
+            <div class="size-price">R250 / day</div>
+            <div class="size-detail">Compact and versatile. Perfect for single display stalls, small garden setups, or as a decorative focal point. Seats 4–6 comfortably.</div>
+            <div class="size-cta"><a href="index.html#contact" class="btn btn-outline" style="font-size:0.7rem;padding:9px 18px">Enquire</a></div>
+          </div>
+          <div class="size-card reveal reveal-delay-1">
+            <div class="size-label">3×3 m</div>
+            <div class="size-price">R400 per day</div>
+            <div class="size-detail">Our most popular size. Accommodates a small table setup comfortably. Ideal for birthday corners, bridal showers, or catering stations.</div>
+            <div class="size-cta"><a href="index.html#contact" class="btn btn-outline" style="font-size:0.7rem;padding:9px 18px">Enquire</a></div>
+          </div>
+          <div class="size-card reveal reveal-delay-2">
+            <div class="size-label">3×6 m</div>
+            <div class="size-price">R600 per day</div>
+            <div class="size-detail">A generous footprint, perfect for seating 20–24 guests, DJ setups, or buffet lines. Excellent for outdoor functions and corporate events.</div>
+            <div class="size-cta"><a href="index.html#contact" class="btn btn-outline" style="font-size:0.7rem;padding:9px 18px">Enquire</a></div>
+          </div>
+        </div>
+
+        <!-- CABANA -->
+        <div class="category-label reveal">Cabana Tents</div>
+        <div class="product-featured reveal" style="margin-bottom:0">
+          <div class="cabana-gallery">
+            <img class="cabana-img" src="images/cabana-1.jpg" alt="3x9 Cabana Setup — front view" loading="lazy" decoding="async"/>
+            <img class="cabana-img" src="images/cabana-2.jpg" alt="3x9 Cabana Setup — wide view" loading="lazy" decoding="async"/>
+          </div>
+          <div class="product-body">
+            <div class="product-tag">Premium Cabana</div>
+            <h3>3×9 Cabana</h3>
+            <p>Stylish and modern, the Cabana tent is a perfect blend of elegance and practicality. The open-sided draped design creates a sophisticated pavilion feel, ideal for picnic-style celebrations, cocktail parties, VIP lounges, and intimate wedding receptions.</p>
+            <table class="price-table">
+              <tr><td>3×6 metre configuration</td><td>Included in hire</td></tr>
+              <tr><td>3×9 metre full configuration</td><td>R1 400 per day</td></tr>
+            </table>
+            <p style="font-size:0.78rem;color:var(--text-dim);margin-bottom:16px">Price includes delivery, setup and collection within service area.</p>
+            <a href="index.html#contact" class="btn btn-gold">Request a Quote</a>
+          </div>
+        </div>
+        <!-- Cabana full-width gallery strip -->
+        <div class="cabana-strip reveal" style="margin-bottom:56px">
+          <img src="images/cabana-2.jpg" alt="Cabana full view" loading="lazy" decoding="async"/>
+          <img src="images/cabana-1.jpg" alt="Cabana detail view" loading="lazy" decoding="async"/>
+        </div>
+
+        <!-- MARQUEE -->
+        <div class="category-label reveal">Marquee Tents</div>
+        <div class="section-header reveal" style="margin-bottom:28px">
+          <h2>Marquee <em>Tents</em></h2>
+          <div class="section-divider"></div>
+          <p>Grand, fully enclosed marquees for large events. Creates a complete venue — suitable for up to 200+ guests depending on configuration.</p>
+        </div>
+        <div class="product-featured reveal" style="margin-bottom:2px">
+          <div class="marquee-gallery">
+            <img class="marquee-img" src="images/marquee-1.jpg" alt="Marquee Tent — aerial view" fetchpriority="high" loading="eager" decoding="async"/>
+            <img class="marquee-img" src="images/marquee-2.jpg" alt="Marquee Tent — side view" loading="lazy" decoding="async"/>
+          </div>
+          <div class="product-body">
+            <div class="product-tag">Grand Marquee</div>
+            <h3>Classic Marquee</h3>
+            <p>Our signature marquees create a complete, weather-proof venue for your event. Professional-grade peaked roof profile with optional side walls — suitable for weddings, corporates, and large celebrations.</p>
+            <table class="price-table">
+              <tr><td>6×9 metre (~54 guests)</td><td>R2 000 per day</td></tr>
+              <tr><td>6×12 metre (~80 guests)</td><td>R3 000 per day</td></tr>
+            </table>
+            <a href="index.html#contact" class="btn btn-gold">Request a Quote</a>
+          </div>
+        </div>
+        <!-- Marquee full-width photo strip -->
+        <div class="marquee-strip reveal" style="margin-bottom:2px">
+          <img src="images/marquee-2.jpg" alt="Marquee row — side view" loading="lazy" decoding="async"/>
+          <img src="images/marquee-1.jpg" alt="Marquee setup — overhead view" fetchpriority="high" loading="eager" decoding="async"/>
+        </div>
+        <div class="tent-size-grid" style="margin-bottom:56px;margin-top:2px">
+          <div class="size-card reveal">
+            <div class="size-label">6×9 m</div>
+            <div class="size-price">R2 000 / day</div>
+            <div class="size-detail">Accommodates up to 54 guests at round tables or 80 theatre-style. Ideal for medium-sized weddings and corporate dinners.</div>
+          </div>
+          <div class="size-card reveal reveal-delay-1">
+            <div class="size-label">6×12 m</div>
+            <div class="size-price">R3 000 / day</div>
+            <div class="size-detail">Our largest marquee — up to 80+ guests at round tables. Perfect for grand weddings, gala dinners, and large corporate events.</div>
+          </div>
+        </div>
+
+        <!-- STRETCH TENT -->
+        <div class="category-label reveal">Stretch Tents</div>
+        <div class="section-header reveal" style="margin-bottom:28px">
+          <h2>Stretch <em>Tents</em></h2>
+          <div class="section-divider"></div>
+          <p>Architectural, flowing shade structures that add a dramatic, contemporary aesthetic to any venue. Popular for cocktail events, weddings, and festival-style celebrations.</p>
+        </div>
+        <div class="product-featured reveal">
+          <div class="stretch-gallery">
+            <img class="stretch-img" src="images/stretch-tent-1.jpg" alt="Stretch Tent — woodland setting" loading="lazy" decoding="async"/>
+            <img class="stretch-img" src="images/stretch-tent-2.jpg" alt="Stretch Tent — garden wedding" loading="lazy" decoding="async"/>
+          </div>
+          <div class="product-body">
+            <div class="product-tag">Contemporary Stretch</div>
+            <h3>Stretch Tent</h3>
+            <p>Available in two sizes, our stretch tents are incredibly versatile. They can be pitched to almost any shape — creating flowing, organic canopies that look spectacular in photographs. Perfect for outdoor weddings, garden parties, and festival-style events.</p>
+            <table class="price-table">
+              <tr><td>6×9 metre</td><td>R1 800 per day</td></tr>
+              <tr><td>6×12 metre</td><td>R2 500 per day</td></tr>
+            </table>
+            <a href="index.html#contact" class="btn btn-gold">Request a Quote</a>
+          </div>
+        </div>
+        <!-- Stretch tent full-width photo strip -->
+        <div class="stretch-strip reveal" style="margin-top:2px;margin-bottom:56px">
+          <img src="images/stretch-tent-2.jpg" alt="Stretch Tent garden setup" loading="lazy" decoding="async"/>
+          <img src="images/stretch-tent-1.jpg" alt="Stretch Tent woodland setup" loading="lazy" decoding="async"/>
+        </div>
+
+      </div><!-- end left -->
+
+      <!-- RIGHT: Quote Builder -->
+      <div>
+        <div class="quote-builder-panel">
+          <p class="section-tag">Quick Quote Builder</p>
+          <h3 style="font-family:var(--font-main);font-size:1.3rem;color:var(--white);margin-bottom:20px;font-weight:400">Select your items</h3>
+
+          <div class="item-row">
+            <input type="checkbox" id="cb_2x2" class="item-select" value="2x2 Gazebo"/>
+            <label for="cb_2x2">2×2 Gazebo</label>
+            <input type="number" id="qty_2x2_Gazebo" data-item="2x2 Gazebo" class="qty-input" value="1" min="1" max="20" aria-label="Quantity for 2x2 Gazebo"/>
+            <span class="item-price">R250/day</span>
+          </div>
+          <div class="item-row">
+            <input type="checkbox" id="cb_3x3" class="item-select" value="3x3 Gazebo"/>
+            <label for="cb_3x3">3×3 Gazebo</label>
+            <input type="number" id="qty_3x3_Gazebo" data-item="3x3 Gazebo" class="qty-input" value="1" min="1" max="4" aria-label="Quantity for 3x3 Gazebo"/>
+            <span class="item-price">R400/day</span>
+          </div>
+          <div class="item-row">
+            <input type="checkbox" id="cb_3x6" class="item-select" value="3x6 Gazebo"/>
+            <label for="cb_3x6">3×6 Gazebo</label>
+            <input type="number" id="qty_3x6_Gazebo" data-item="3x6 Gazebo" class="qty-input" value="1" min="1" max="1" aria-label="Quantity for 3x6 Gazebo"/>
+            <span class="item-price">R600/day</span>
+          </div>
+          <div class="item-row">
+            <input type="checkbox" id="cb_cab" class="item-select" value="3x9 Cabana"/>
+            <label for="cb_cab">3×9 Cabana</label>
+            <input type="number" id="qty_3x9_Cabana" data-item="3x9 Cabana" class="qty-input" value="1" min="1" max="2" aria-label="Quantity for 3x9 Cabana"/>
+            <span class="item-price">R1 400/day</span>
+          </div>
+          <div class="item-row">
+            <input type="checkbox" id="cb_mq9" class="item-select" value="Marquee 6x9"/>
+            <label for="cb_mq9">Marquee 6×9</label>
+            <input type="number" id="qty_Marquee_6x9" data-item="Marquee 6x9" class="qty-input" value="1" min="1" max="1" aria-label="Quantity for Marquee 6x9"/>
+            <span class="item-price">R2 000/day</span>
+          </div>
+          <div class="item-row">
+            <input type="checkbox" id="cb_mq12" class="item-select" value="Marquee 6x12"/>
+            <label for="cb_mq12">Marquee 6×12</label>
+            <input type="number" id="qty_Marquee_6x12" data-item="Marquee 6x12" class="qty-input" value="1" min="1" max="1" aria-label="Quantity for Marquee 6x12"/>
+            <span class="item-price">R3 000/day</span>
+          </div>
+          <div class="item-row">
+            <input type="checkbox" id="cb_st9" class="item-select" value="Stretch Tent 6x9"/>
+            <label for="cb_st9">Stretch Tent 6×9</label>
+            <input type="number" id="qty_Stretch_Tent_6x9" data-item="Stretch Tent 6x9" class="qty-input" value="1" min="1" max="1" aria-label="Quantity for Stretch Tent 6x9"/>
+            <span class="item-price">R1 800/day</span>
+          </div>
+          <div class="item-row">
+            <input type="checkbox" id="cb_st12" class="item-select" value="Stretch Tent 6x12"/>
+            <label for="cb_st12">Stretch Tent 6×12</label>
+            <input type="number" id="qty_Stretch_Tent_6x12" data-item="Stretch Tent 6x12" class="qty-input" value="1" min="1" max="1" aria-label="Quantity for Stretch Tent 6x12"/>
+            <span class="item-price">R2 500/day</span>
+          </div>
+
+          <div id="quoteSummary" class="quote-lines" style="margin-top:16px">
+            <span class="text-dim" style="font-size:0.8rem">Select items above to build your quote</span>
+          </div>
+          <div class="quote-total-row">
+            <span class="quote-total-label">Estimated Total</span>
+            <span class="quote-total-amount" id="quoteTotal">—</span>
+          </div>
+          <a href="index.html#contact" class="btn btn-gold full-width" style="margin-top:20px;display:block;text-align:center">Submit Enquiry →</a>
+          <p style="font-size:0.7rem;color:var(--text-dim);margin-top:12px;text-align:center">Prices are per day. Delivery & setup quoted separately.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band">
+  <h2>Not sure which tent is right for your event?</h2>
+  <p>Chat with Jane — our event consultant will help you choose the perfect structure for your guest count and venue.</p>
+  <button onclick="document.getElementById('chatBubbleBtn').click()" class="btn btn-white">Chat with Jane</button>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand footer-col">
+      <a href="index.html" class="nav-logo" style="text-decoration:none">
+        <div class="logo-emblem">M</div>
+        <div class="logo-text"><span class="logo-main">Mirj Rentals</span><span class="logo-sub">Premium Event Hire</span></div>
+      </a>
+      <p>Delivering exceptional event rental equipment and personalised service across Cape Town and surrounds since 2018.</p>
+    </div>
+    <div class="footer-col"><h4>Catalogue</h4><ul>
+      <li><a href="tents.html">Tents & Structures</a></li>
+      <li><a href="chairs.html">Chairs & Seating</a></li>
+      <li><a href="tables.html">Tables</a></li>
+      <li><a href="photobooth.html">Photo Booths & Stages</a></li>
+      <li><a href="food-stands.html">Cake & Food Stands</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Company</h4><ul>
+      <li><a href="index.html#about">About Us</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="admin.html">Admin Portal</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul>
+      <li><a (href="tel:+27662271571">066 227 1571</a></li>
+      <li><a href="mailto:mirjtraders@gmail.com">mirjtraders@gmail.com</a></li>
+      <li>Athlone, Cape Town</li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Mirj Rentals. All rights reserved.</p>
+    <div class="footer-legal">
+      <span>Privacy Policy</span>
+      <span>Terms & Conditions</span>
+    </div>
+  </div>
+</footer>
+
+<!-- JANE CHAT -->
+<div class="chat-launcher" id="chatLauncher">
+  <div class="chat-window" id="chatWindow">
+    <div class="chat-header">
+      <div class="chat-header-avatar">J</div>
+      <div class="chat-header-info"><strong>Jane — Event Consultant</strong><div class="chat-header-status">● Available now</div></div>
+      <button class="chat-header-close" id="chatClose">✕</button>
+    </div>
+    <div class="chat-messages" id="janeMessages"></div>
+    <div class="chat-quick-btns" id="janeQuickBtns">
+      <button class="jane-quick" data-msg="Design a layout for 100 guests outdoor wedding">Layout for 100 guests</button>
+      <button class="jane-quick" data-msg="Which tent is best for 80 guests?">Best tent for 80 guests</button>
+      <button class="jane-quick" data-msg="How many guests fit in a marquee?">Marquee capacity</button>
+    </div>
+    <div class="chat-input-area">
+      <input type="text" id="janeInput" placeholder="Type your message…" autocomplete="off" aria-label="Chat with Jane — type your message"/>
+      <button class="chat-send-btn" id="janeSendBtn">Send</button>
+    </div>
+  </div>
+  <button class="chat-bubble-btn" id="chatBubbleBtn">
+    <div class="chat-avatar-small">J</div>
+    <span>Chat with Jane</span>
+    <div class="chat-notif-dot"></div>
+  </button>
+</div>
+
+<div class="modal-overlay hidden" id="responseModal">
+  <div class="modal-box">
+    <div class="modal-icon">✉️</div>
+    <h3 id="modalTitle">Enquiry Submitted</h3>
+    <p id="modalBody">Thank you — our team will be in touch within 24 hours.</p>
+    <button class="btn btn-gold" id="closeModal">Close</button>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="js/emailjs-config.js"></script>
+<script src="js/bob.js" defer></script>
+<script src="js/jane.js" defer></script>
+<script src="js/main.js" defer></script>
+<script src="js/analytics.js" defer></script>
+</body>
+</html>

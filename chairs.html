@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T8TBZ345D3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-T8TBZ345D3');
+  </script>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chairs & Seating — Mirj Rentals</title>
+  <meta name="description" content="Premium chair hire for events — Tiffany chairs, white and black foldable chairs, stackable chairs and benches. Cape Town delivery included."/>
+  <!-- Fonts — async (non-render-blocking) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="preconnect" href="https://images.unsplash.com"/>
+  <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700;800&display=swap"/>
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700;800&display=swap"/></noscript>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%23c9a84c'/><text x='50' y='70' font-size='56' text-anchor='middle' fill='%230a0a0a' font-family='Georgia,serif'>M</text></svg>"/>
+  <meta name="theme-color" content="#0a0a0a"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .chairs-hero-bg { background-image: url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=1600&q=80'); }
+    .chair-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(300px,1fr)); gap: 2px; }
+    .chair-card { background: var(--card-dark); border: 1px solid var(--border); overflow:hidden; transition: border-color 0.3s; }
+    .chair-card:hover { border-color: var(--border-gold); }
+    .chair-img { width:100%; height:220px; object-fit:cover; filter:brightness(0.85); transition: filter 0.4s, transform 0.5s; display:block; }
+    .chair-card:hover .chair-img { filter:brightness(1); transform:scale(1.04); }
+    .chair-img-wrap { overflow:hidden; }
+    .chair-body { padding:24px 26px 28px; }
+    .chair-name { font-family:var(--font-main); font-size:1.5rem; font-weight:400; color:var(--white); margin-bottom:8px; }
+    .chair-price { color:var(--gold); font-weight:700; font-size:1rem; margin-bottom:10px; }
+    .chair-desc { color:var(--text-dim); font-size:0.83rem; line-height:1.6; margin-bottom:16px; }
+    .chair-spec { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:18px; }
+    .spec-tag { font-size:0.65rem; letter-spacing:0.1em; text-transform:uppercase; background:rgba(201,168,76,0.1); color:var(--gold); padding:4px 10px; font-weight:700; }
+    .calculator-band { background:var(--off-black); padding:64px 8%; }
+    .calc-inner { max-width:900px; margin:0 auto; }
+    .calc-grid { display:grid; grid-template-columns:1fr 1fr; gap:40px; }
+    .calc-form { background:var(--card-dark); border:1px solid var(--border); padding:32px; }
+    .calc-result { background:var(--card-dark); border:1px solid var(--border-gold); padding:32px; }
+    .calc-row { margin-bottom:18px; }
+    .calc-row label { display:block; font-size:0.65rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold); font-weight:700; margin-bottom:6px; }
+    .calc-row input, .calc-row select { width:100%; background:var(--black); border:1px solid var(--border); color:var(--off-white); padding:12px 16px; font-family:var(--font-sans); font-size:0.9rem; outline:none; transition:border-color 0.2s; }
+    .calc-row input:focus, .calc-row select:focus { border-color:var(--gold); }
+    .result-line { display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid var(--border); font-size:0.84rem; }
+    .result-line:last-of-type { border-bottom:none; }
+    .result-label { color:var(--text-dim); }
+    .result-value { color:var(--off-white); font-weight:600; }
+    .result-total { font-family:var(--font-main); font-size:1.8rem; color:var(--gold); margin-top:16px; text-align:right; }
+    /* Two-photo gallery inside a chair card */
+    .chair-photo-gallery {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 2px; height: 220px; overflow: hidden;
+    }
+    .chair-photo-gallery img {
+      width: 100%; height: 220px; object-fit: cover; object-position: center;
+      filter: brightness(0.85); transition: filter 0.4s, transform 0.5s; display: block;
+    }
+    .chair-card:hover .chair-photo-gallery img { filter: brightness(1); transform: scale(1.04); }
+
+    @media(max-width:768px){ .calc-grid{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-emblem">M</div>
+      <div class="logo-text"><span class="logo-main">Mirj Rentals</span><span class="logo-sub">Premium Event Hire</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="has-dropdown"><a href="#" class="active">Catalogue ▾</a>
+        <div class="dropdown">
+          <a href="tents.html">Tents & Structures</a>
+          <a href="chairs.html" class="active">Chairs & Seating</a>
+          <a href="tables.html">Tables</a>
+          <a href="photobooth.html">Photo Booths & Stages</a>
+          <a href="food-stands.html">Cake & Food Stands</a>
+        </div>
+      </li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="index.html#contact" class="nav-cta">Request a Quote</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobileMenu">&#9776;</button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a><a href="tents.html">Tents & Structures</a>
+    <a href="chairs.html">Chairs & Seating</a><a href="tables.html">Tables</a>
+    <a href="photobooth.html">Photo Booths & Stages</a>
+    <a href="food-stands.html">Cake & Food Stands</a><a href="index.html#contact">Contact</a>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="page-hero-bg chairs-hero-bg"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Chairs & Seating</span></div>
+    <h1>Chairs &amp; <em>Seating</em></h1>
+    <p>Elegant, comfortable seating solutions for every event size and style — from intimate gatherings to grand celebrations.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="section-tag">Seating Collection</p>
+      <h2>Premium <em>Seating</em> for Every Occasion</h2>
+      <div class="section-divider"></div>
+      <p>All our chairs are cleaned and inspected before each hire. Chair covers available as an add-on.</p>
+    </div>
+
+    <div class="chair-grid">
+
+      <!-- Tiffany / Chiavari Chairs -->
+      <div class="chair-card reveal">
+        <div class="chair-photo-gallery">
+          <img src="images/tiffany-chairs-1.jpg" alt="Tiffany Chairs — elegant event setup" fetchpriority="high" loading="eager" decoding="async"/>
+          <img src="images/tiffany-chairs-2.jpg" alt="Tiffany Chairs — outdoor wedding setting" loading="lazy" decoding="async"/>
+        </div>
+        <div class="chair-body">
+          <div class="product-tag">Most Popular</div>
+          <div class="chair-name">Tiffany Chairs</div>
+          <div class="chair-price">R20 per chair / per day</div>
+          <div class="chair-desc">The classic Chiavari-style Tiffany chair — the go-to choice for weddings, baby showers, and upmarket functions. Elegant, timeless, and effortlessly photogenic. Pairs beautifully with sashes and covers.</div>
+          <div class="chair-spec">
+            <span class="spec-tag">Stock: 50 available</span>
+            <span class="spec-tag">Weddings</span>
+            <span class="spec-tag">Functions</span>
+          </div>
+          <a href="index.html#contact" class="btn btn-gold">Request a Quote</a>
+        </div>
+      </div>
+
+      <!-- White Foldable Chairs -->
+      <div class="chair-card reveal reveal-delay-1">
+        <div class="chair-photo-gallery">
+          <img src="images/white-chairs-1.jpg" alt="White Foldable Chairs — table setup view" loading="lazy" decoding="async"/>
+          <img src="images/white-chairs-2.jpg" alt="White Foldable Chair — detail view" loading="lazy" decoding="async"/>
+        </div>
+        <div class="chair-body">
+          <div class="product-tag">Versatile</div>
+          <div class="chair-name">White Foldable Chairs</div>
+          <div class="chair-price">R15 per chair / per day</div>
+          <div class="chair-desc">Practical white plastic foldable chairs — clean, lightweight, and easy to arrange. Perfect for any event where you need reliable, smart-looking seating in quantity. A crowd favourite for indoor and outdoor use.</div>
+          <div class="chair-spec">
+            <span class="spec-tag">Stock: 50 available</span>
+            <span class="spec-tag">Indoor & Outdoor</span>
+            <span class="spec-tag">Any Event</span>
+          </div>
+          <a href="index.html#contact" class="btn btn-gold">Request a Quote</a>
+        </div>
+      </div>
+
+      <!-- Black Foldable -->
+      <div class="chair-card reveal reveal-delay-2">
+        <div class="chair-photo-gallery">
+          <img src="images/black-foldable-1.png" alt="Black Foldable Chairs — outdoor event setup" loading="lazy" decoding="async"/>
+          <img src="images/black-foldable-2.png" alt="Black Foldable Chair — product view" loading="lazy" decoding="async"/>
+        </div>
+        <div class="chair-body">
+          <div class="product-tag">Classic</div>
+          <div class="chair-name">Black Foldable Chairs</div>
+          <div class="chair-price">R15 per chair / per day</div>
+          <div class="chair-desc">Sleek black plastic foldable chairs offering a clean, modern aesthetic. Ideal for corporate events, cocktail parties, and contemporary celebrations. Available in black or white.</div>
+          <div class="chair-spec">
+            <span class="spec-tag">Stock: 50 available</span>
+            <span class="spec-tag">Corporate</span>
+            <span class="spec-tag">Parties</span>
+          </div>
+          <a href="index.html#contact" class="btn btn-gold">Request a Quote</a>
+        </div>
+      </div>
+
+      <!-- Black Stackable -->
+      <div class="chair-card reveal reveal-delay-3">
+        <div class="chair-photo-gallery">
+          <img src="images/stackable-chairs-1.jpg" alt="Black Stackable Chairs — overhead setup" loading="lazy" decoding="async"/>
+          <img src="images/stackable-chairs-2.jpg" alt="Black Stackable Chairs — side view" loading="lazy" decoding="async"/>
+        </div>
+        <div class="chair-body">
+          <div class="product-tag">Budget Friendly</div>
+          <div class="chair-name">Black Stackable Chairs</div>
+          <div class="chair-price">R7 per chair / per day</div>
+          <div class="chair-desc">Our most affordable seating option. Sturdy black plastic stackable chairs — practical for high-volume events. Add a chair cover to elevate the look instantly.</div>
+          <div class="chair-spec">
+            <span class="spec-tag">Stock: 20 available</span>
+            <span class="spec-tag">Budget Option</span>
+          </div>
+          <div style="background:var(--black);border:1px solid var(--border);padding:12px 16px;margin-bottom:16px;font-size:0.8rem;color:var(--text-dim)">
+            ✨ <strong style="color:var(--gold)">Chair Cover Add-On:</strong> Black or White covers available at R5 per chair per day
+          </div>
+          <a href="index.html#contact" class="btn btn-gold">Request a Quote</a>
+        </div>
+      </div>
+
+      <!-- White Benches -->
+      <div class="chair-card reveal">
+        <div class="chair-photo-gallery">
+          <img src="images/bench-1.png" alt="White 4-Seater Bench — product view" loading="lazy" decoding="async"/>
+          <img src="images/bench-2.png" alt="White 4-Seater Bench — in use at garden event" loading="lazy" decoding="async"/>
+        </div>
+        <div class="chair-body">
+          <div class="product-tag">Unique Touch</div>
+          <div class="chair-name">White 4-Seater Benches</div>
+          <div class="chair-price">R40 per bench / per day</div>
+          <div class="chair-desc">Charming foldable white benches that seat 4 guests comfortably. Perfect for outdoor garden ceremonies, picnic-style events, and as alternative reception seating. Creates a relaxed, elegant atmosphere.</div>
+          <div class="chair-spec">
+            <span class="spec-tag">Stock: 6 available</span>
+            <span class="spec-tag">Ceremonies</span>
+            <span class="spec-tag">Garden Events</span>
+          </div>
+          <a href="index.html#contact" class="btn btn-gold">Request a Quote</a>
+        </div>
+      </div>
+
+      <!-- Cocktail Chairs / Bar Stools -->
+      <div class="chair-card reveal reveal-delay-1">
+        <div class="chair-img-wrap">
+          <img class="chair-img" src="images/cocktail-chairs-1.jpg" alt="White cocktail bar stools at a cocktail event" loading="lazy" decoding="async"/>
+        </div>
+        <div class="chair-body">
+          <div class="product-tag">Cocktail Events</div>
+          <div class="chair-name">Cocktail Chairs</div>
+          <div class="chair-price">R30 per chair / per day</div>
+          <div class="chair-desc">Sleek white metal bar stools — the perfect companion to our cocktail tables. Ideal for sundowners, cocktail parties, corporate networking events, and bar stations. Stylish, sturdy, and effortlessly chic.</div>
+          <div class="chair-spec">
+            <span class="spec-tag">Cocktail Events</span>
+            <span class="spec-tag">Sundowners</span>
+            <span class="spec-tag">Corporate</span>
+            <span class="spec-tag">Bar Stations</span>
+          </div>
+          <a href="index.html#contact" class="btn btn-gold">Request a Quote</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SEATING CALCULATOR -->
+<section class="calculator-band">
+  <div class="calc-inner">
+    <div class="section-header reveal" style="margin-bottom:40px">
+      <p class="section-tag">Seating Calculator</p>
+      <h2>How Many Chairs Do <em>You Need?</em></h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="calc-grid">
+      <div class="calc-form reveal">
+        <div class="calc-row">
+          <label>Number of Guests</label>
+          <input type="number" id="guestCount" placeholder="e.g. 80" min="1"/>
+        </div>
+        <div class="calc-row">
+          <label>Chair Type</label>
+          <select id="chairType">
+            <option value="20">Tiffany Chairs — R20/chair</option>
+            <option value="15">White Foldable Chairs — R15/chair</option>
+            <option value="15">Black Foldable Chairs — R15/chair</option>
+            <option value="7">Black Stackable Chairs — R7/chair</option>
+          </select>
+        </div>
+        <div class="calc-row">
+          <label>Add Chair Covers? (+R5/chair)</label>
+          <select id="addCovers">
+            <option value="0">No covers</option>
+            <option value="5">Yes — Black covers</option>
+            <option value="5">Yes — White covers</option>
+          </select>
+        </div>
+        <div class="calc-row">
+          <label>Number of Days</label>
+          <input type="number" id="numDays" value="1" min="1"/>
+        </div>
+        <button class="btn btn-gold full-width" onclick="calculateSeating()">Calculate</button>
+      </div>
+      <div class="calc-result reveal reveal-delay-1">
+        <p class="section-tag" style="margin-bottom:16px">Your Estimate</p>
+        <div id="calcResults">
+          <p style="color:var(--text-dim);font-size:0.85rem">Fill in the form to see your estimated cost.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <h2>Need seating for a large event?</h2>
+  <p>Chat with Jane for a personalised seating plan and competitive bulk pricing.</p>
+  <button onclick="document.getElementById('chatBubbleBtn').click()" class="btn btn-white">Chat with Jane</button>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand footer-col">
+      <a href="index.html" class="nav-logo" style="text-decoration:none">
+        <div class="logo-emblem">M</div>
+        <div class="logo-text"><span class="logo-main">Mirj Rentals</span><span class="logo-sub">Premium Event Hire</span></div>
+      </a>
+      <p>Delivering exceptional event rental equipment and personalised service across Cape Town and surrounds since 2018.</p>
+    </div>
+    <div class="footer-col"><h4>Catalogue</h4><ul>
+      <li><a href="tents.html">Tents & Structures</a></li>
+      <li><a href="chairs.html">Chairs & Seating</a></li>
+      <li><a href="tables.html">Tables</a></li>
+      <li><a href="photobooth.html">Photo Booths & Stages</a></li>
+      <li><a href="food-stands.html">Cake & Food Stands</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Company</h4><ul>
+      <li><a href="index.html#about">About Us</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="admin.html">Admin Portal</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul>
+      <li><a (href="tel:+27662271571">066 227 1571</a></li>
+      <li><a href="mailto:mirjtraders@gmail.com">mirjtraders@gmail.com</a></li>
+      <li>Athlone, Cape Town</li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Mirj Rentals. All rights reserved.</p>
+    <div class="footer-legal">
+      <span>Privacy Policy</span>
+      <span>Terms & Conditions</span>
+    </div>
+  </div>
+</footer>
+
+<div class="chat-launcher" id="chatLauncher">
+  <div class="chat-window" id="chatWindow">
+    <div class="chat-header">
+      <div class="chat-header-avatar">J</div>
+      <div class="chat-header-info"><strong>Jane — Event Consultant</strong><div class="chat-header-status">● Available now</div></div>
+      <button class="chat-header-close" id="chatClose">✕</button>
+    </div>
+    <div class="chat-messages" id="janeMessages"></div>
+    <div class="chat-quick-btns" id="janeQuickBtns">
+      <button class="jane-quick" data-msg="How many chairs do I need for 80 guests?">Chairs for 80 guests</button>
+      <button class="jane-quick" data-msg="What do I need for a wedding with 120 guests?">Wedding for 120</button>
+      <button class="jane-quick" data-msg="What is the cheapest seating option?">Budget seating</button>
+    </div>
+    <div class="chat-input-area">
+      <input type="text" id="janeInput" placeholder="Type your message…" autocomplete="off" aria-label="Chat with Jane — type your message"/>
+      <button class="chat-send-btn" id="janeSendBtn">Send</button>
+    </div>
+  </div>
+  <button class="chat-bubble-btn" id="chatBubbleBtn">
+    <div class="chat-avatar-small">J</div>
+    <span>Chat with Jane</span>
+    <div class="chat-notif-dot"></div>
+  </button>
+</div>
+<div class="modal-overlay hidden" id="responseModal">
+  <div class="modal-box"><div class="modal-icon">✉️</div><h3 id="modalTitle">Enquiry Submitted</h3><p id="modalBody">Our team will be in touch within 24 hours.</p><button class="btn btn-gold" id="closeModal">Close</button></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="js/emailjs-config.js"></script>
+<script src="js/bob.js" defer></script>
+<script src="js/jane.js" defer></script>
+<script src="js/main.js" defer></script>
+<script>
+function calculateSeating() {
+  const guests = parseInt(document.getElementById('guestCount').value) || 0;
+  const chairRate = parseInt(document.getElementById('chairType').value) || 15;
+  const coverRate = parseInt(document.getElementById('addCovers').value) || 0;
+  const days = parseInt(document.getElementById('numDays').value) || 1;
+  if (!guests) { document.getElementById('calcResults').innerHTML='<p style="color:var(--text-dim)">Please enter a guest count.</p>'; return; }
+  const chairTotal = guests * chairRate * days;
+  const coverTotal = guests * coverRate * days;
+  const grandTotal = chairTotal + coverTotal;
+  document.getElementById('calcResults').innerHTML = `
+    <div class="result-line"><span class="result-label">Chairs (${guests} × R${chairRate} × ${days} day${days>1?'s':''})</span><span class="result-value">R${chairTotal.toLocaleString()}</span></div>
+    ${coverRate > 0 ? `<div class="result-line"><span class="result-label">Covers (${guests} × R${coverRate} × ${days} day${days>1?'s':''})</span><span class="result-value">R${coverTotal.toLocaleString()}</span></div>` : ''}
+    <div class="result-total">R${grandTotal.toLocaleString()}</div>
+    <p style="font-size:0.72rem;color:var(--text-dim);margin-top:12px">Estimate only. Delivery & collection quoted separately.</p>
+    <a href="index.html#contact" class="btn btn-gold" style="margin-top:16px;display:block;text-align:center">Request Formal Quote</a>
+  `;
+}
+</script>
+<script src="js/analytics.js" defer></script>
+</body>
+</html>

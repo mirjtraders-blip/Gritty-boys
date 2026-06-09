@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "mirj-rentals",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": ["/Users/kassiems/mirj-rentals/serve.sh"],
+      "port": 3334,
+      "autoPort": false
+    }
+  ]
+}
