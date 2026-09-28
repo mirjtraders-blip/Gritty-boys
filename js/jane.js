@@ -1599,7 +1599,7 @@ const Jane = (() => {
         return r;
       }
     }
-    return `Here's a quick pricing overview:\n\n**Tents & Structures:**\n  • Gazebos: R250–R600/day\n  • Cabana 3×9: R1,400/day\n  • Stretch Tents: R1,800–R2,500/day\n  • Marquees: R2,500–R3,500/day\n\n**Seating:**\n  • Tiffany Chairs: R20 each/day\n  • Foldable Chairs: R15 each/day\n  • Cocktail Chairs: R30 each/day\n  • Stackable: R7 each/day\n\n**Tables:**\n  • Round Tables: R80/day _(tablecloth incl.)_\n  • Foldable Tables: R60/day _(tablecloth incl.)_\n  • Cocktail Tables: R80/day\n  • Display Tables: R150/day\n\n**Entertainment & Décor:**\n  • Magazine Photo Booth: R2,000/day\n  • Stage Platforms: R200–R250/day\n  • Backdrop Arcs: R150 each/day\n\nAll prices are per day. Delivery + setup: R300.\n\nTell me your guest count and I'll build a full personalised quote! 😊`;
+    return `Here's a quick pricing overview:\n\n**Tents & Structures:**\n  • Gazebos: R250–R600/day\n  • Cabana 3×9: R1,400/day\n  • Stretch Tents: R1,800–R2,500/day\n  • Marquees: R2,500–R3,500/day\n\n**Seating:**\n  • Tiffany Chairs: R20 each/day\n  • Foldable Chairs: R15 each/day\n  • Cocktail Chairs: R30 each/day\n  • Stackable: R7 each/day\n\n**Tables:**\n  • Round Tables: R80/day _(tablecloth incl.)_\n  • Foldable Tables: R60/day _(tablecloth incl.)_\n  • Cocktail Tables: R80/day\n  • Display Tables: R150/day\n\n**Party Displays & Backdrops:**\n  • Magazine Photo Booth: R2,000/day\n  • 3D Arch: R500/day (personalised wording incl.)\n  • Welcome Board with Frame: R300/day\n  • Welcome Flower Box: R400/day\n  • Stage Platforms: R200–R250/day\n  • Backdrop Arcs: R150 each/day\n\n**Kiddies:**\n  • Kiddies Tiffany Chairs: R15 · Party Tables: R100\n  • Jumping Castle: R800 (R1,500 with balloons)\n  • Bubble House: R1,500 · Water Slide: R450\n\nAll prices are per day. Delivery + setup: R300.\n\nTell me your guest count and I'll build a full personalised quote! 😊`;
   }
 
   function respondItemsHelp(msg) {
@@ -1614,7 +1614,7 @@ const Jane = (() => {
       return `**Our seating options:**\n• Tiffany Chairs (Chiavari) — R20/chair ⭐\n• White Foldable chairs — R15/chair\n• Black Foldable chairs — R15/chair\n• Black Stackable chairs — R7/chair\n• White 4-Seater Benches — R40/bench\n• Cocktail Chairs (bar stools) — R30/chair\n\n${gc ? `For **${gc} guests** I'd recommend **${gc} chairs** minimum.` : 'How many guests are you expecting?'}`;
     }
     if (/photo|booth|backdrop|arch|stage/.test(msg)) {
-      return "**Entertainment & Décor:**\n• Magazine Photo Booth — R2,000/day ⭐\n• Backdrop Arcs — R150/arch per day\n• 3D Arch — R500/day (personalised wording included)\n• Welcome Board with Frame — R300/day\n• Welcome Flower Box — R400/day\n• Stage Platform 2×2 — R250/day\n• Stage Platform 1×1 — R200/day\n• Balloon Setup — Custom quote\n\nWhich would suit your event best?";
+      return "**Party Displays & Backdrops:**\n• Magazine Photo Booth — R2,000/day ⭐\n• Backdrop Arcs — R150/arch per day\n• 3D Arch — R500/day (personalised wording included)\n• Welcome Board with Frame — R300/day\n• Welcome Flower Box — R400/day\n• Stage Platform 2×2 — R250/day\n• Stage Platform 1×1 — R200/day\n• Balloon Setup — Custom quote\n\nWhich would suit your event best?";
     }
     if (/table/.test(msg)) {
       const gc = state.guestCount;
@@ -1627,7 +1627,7 @@ const Jane = (() => {
     if (state.lastCategory === 'chairs') return respondItemsHelp('chair');
     if (state.lastCategory === 'tables') return respondItemsHelp('table');
     if (state.lastCategory === 'tents') return respondItemsHelp('tent');
-    return `Here's what we have — just tell me what you'd like and how many:\n\n🏕️ **Tents** — Gazebos (R250–R600), Cabana, Stretch Tents, Marquees\n🪑 **Chairs** — Tiffany (R20), Foldable (R15), Stackable (R7), Cocktail bar stools (R30)\n🪵 **Tables** — Round (R80), Foldable (R60), Cocktail (R80), Display (R150)\n📸 **Entertainment** — Photo Booth (R2 000), Stages, Backdrop Arcs, 3D Arch (R500 incl. wording), Welcome Board (R300), Welcome Flower Box (R400)\n🍰 **Displays** — Step Display, Food Pedestals, Pyramid Stands\n🎈 **Kiddies** — Kiddies Tiffany Chairs (R15), Party Tables (R100), Jumping Castle (R800, or R1 500 with balloons), Bubble House (R1 500), Water Slide (R450)\n\nYou can say things like: _"20 Tiffany chairs"_, _"5 round tables"_, or _"1 stretch tent and 60 chairs"_`;
+    return `Here's what we have — just tell me what you'd like and how many:\n\n🏕️ **Tents** — Gazebos (R250–R600), Cabana, Stretch Tents, Marquees\n🪑 **Chairs** — Tiffany (R20), Foldable (R15), Stackable (R7), Cocktail bar stools (R30)\n🪵 **Tables** — Round (R80), Foldable (R60), Cocktail (R80), Display (R150)\n📸 **Party Displays & Backdrops** — Photo Booth (R2 000), Stages, Backdrop Arcs, 3D Arch (R500 incl. wording), Welcome Board (R300), Welcome Flower Box (R400)\n🍰 **Displays** — Step Display, Food Pedestals, Pyramid Stands\n🎈 **Kiddies** — Kiddies Tiffany Chairs (R15), Party Tables (R100), Jumping Castle (R800, or R1 500 with balloons), Bubble House (R1 500), Water Slide (R450)\n\nYou can say things like: _"20 Tiffany chairs"_, _"5 round tables"_, or _"1 stretch tent and 60 chairs"_`;
   }
 
   // =================== PUBLIC API ===================

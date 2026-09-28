@@ -1473,8 +1473,8 @@ function openEditBooking(id) {
 }
 function buildItemsGrid() {
   const inv = window.Bob ? Bob.INVENTORY_MASTER : {};
-  const categories = { 'Tents & Structures': [], 'Seating': [], 'Tables': [], 'Entertainment & Décor': [], 'Display': [], 'Kiddies': [] };
-  const catMap = { tents: 'Tents & Structures', chairs: 'Seating', tables: 'Tables', photobooth: 'Entertainment & Décor', food: 'Display', kids: 'Kiddies' };
+  const categories = { 'Tents & Structures': [], 'Seating': [], 'Tables': [], 'Party Displays & Backdrops': [], 'Display': [], 'Kiddies': [] };
+  const catMap = { tents: 'Tents & Structures', chairs: 'Seating', tables: 'Tables', photobooth: 'Party Displays & Backdrops', food: 'Display', kids: 'Kiddies' };
   Object.entries(inv).forEach(([key, item]) => {
     const cat = catMap[item.category] || 'Other';
     if (!categories[cat]) categories[cat] = [];
