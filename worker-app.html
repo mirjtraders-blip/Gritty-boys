@@ -1144,7 +1144,7 @@ function openBuildQuote(requestId) {
   document.getElementById('bqTitle').textContent = `Quote — ${req.name || 'Client'}`;
 
   const inv = window.Bob ? Bob.INVENTORY_MASTER : {};
-  const categories = ['tents','chairs','photobooth','food'];
+  const categories = ['tents','chairs','tables','photobooth','food','kids'];
   const catLabels = { tents:'Tents & Gazebos', chairs:'Chairs & Seating', photobooth:'Stage & Photo', food:'Food Stands' };
 
   let html = '';
@@ -1473,8 +1473,8 @@ function openEditBooking(id) {
 }
 function buildItemsGrid() {
   const inv = window.Bob ? Bob.INVENTORY_MASTER : {};
-  const categories = { 'Tents & Structures': [], 'Seating': [], 'Entertainment & Décor': [], 'Display': [] };
-  const catMap = { tents: 'Tents & Structures', chairs: 'Seating', photobooth: 'Entertainment & Décor', food: 'Display' };
+  const categories = { 'Tents & Structures': [], 'Seating': [], 'Tables': [], 'Entertainment & Décor': [], 'Display': [], 'Kiddies': [] };
+  const catMap = { tents: 'Tents & Structures', chairs: 'Seating', tables: 'Tables', photobooth: 'Entertainment & Décor', food: 'Display', kids: 'Kiddies' };
   Object.entries(inv).forEach(([key, item]) => {
     const cat = catMap[item.category] || 'Other';
     if (!categories[cat]) categories[cat] = [];

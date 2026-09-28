@@ -35,6 +35,15 @@ const Bob = (() => {
     "Food Pedestals":        { total: 15, cost: 50,   unit: "per pedestal (R120 for 3)", category: "food" },
     "Pyramid Stand":         { total: 5,  cost: 50,   unit: "per stand (R90 for 2)", category: "food" },
     "Chair Cover (B/W)":     { total: 100,cost: 5,    unit: "per cover",    category: "chairs" },
+    "3D Arch":               { total: 1,  cost: 500,  unit: "per arch (personalised wording included)", category: "photobooth" },
+    "Welcome Board with Frame": { total: 1, cost: 300, unit: "per board",   category: "photobooth" },
+    "Welcome Flower Box":    { total: 1,  cost: 400,  unit: "per box",      category: "photobooth" },
+    "Kiddies Tiffany Chairs":{ total: 10, cost: 15,   unit: "per chair",    category: "kids" },
+    "Kiddies Party Tables":  { total: 1,  cost: 100,  unit: "per table",    category: "kids" },
+    "Jumping Castle":        { total: 1,  cost: 800,  unit: "per castle",   category: "kids" },
+    "Jumping Castle with Balloons": { total: 1, cost: 1500, unit: "per castle incl. balloon décor", category: "kids", stockKey: "Jumping Castle" },
+    "Bubble House":          { total: 1,  cost: 1500, unit: "per bubble house", category: "kids" },
+    "Water Slide":           { total: 1,  cost: 450,  unit: "per slide",    category: "kids" },
   };
 
   const OWNER_EMAIL = "mirjtraders@gmail.com";
@@ -85,7 +94,8 @@ const Bob = (() => {
     const bookedQty = {};
     bookings.forEach(booking => {
       booking.items.forEach(({ key, qty }) => {
-        bookedQty[key] = (bookedQty[key] || 0) + qty;
+        const sk = (INVENTORY_MASTER[key] && INVENTORY_MASTER[key].stockKey) || key; // items sharing one physical unit
+        bookedQty[sk] = (bookedQty[sk] || 0) + qty;
       });
     });
 
@@ -94,7 +104,8 @@ const Bob = (() => {
     requestedItems.forEach(({ key, qty }) => {
       const item = INVENTORY_MASTER[key];
       if (!item) return;
-      const alreadyBooked = bookedQty[key] || 0;
+      const sk = item.stockKey || key;
+      const alreadyBooked = bookedQty[sk] || 0;
       const remaining = item.total - alreadyBooked;
       if (remaining < qty) {
         issues.push({

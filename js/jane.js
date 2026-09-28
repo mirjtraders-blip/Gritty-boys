@@ -184,6 +184,16 @@ const Jane = (() => {
 
   // =================== PRODUCT KNOWLEDGE BASE ===================
   const productKeywords = {
+    // New items first so specific names win over broader ones below (e.g. "kiddies tiffany" before "tiffany", "3d arch" before "arch")
+    "Kiddies Tiffany Chairs":["kiddies tiffany","kids tiffany","kiddie tiffany","kiddies chair","kids chair","kiddie chair","children's chair","childrens chair","small tiffany"],
+    "Kiddies Party Tables":  ["kiddies table","kids table","kiddie table","kids party table","kiddies party table","children's table","childrens table"],
+    "Jumping Castle with Balloons": ["castle balloon","castle with balloon","jumping castle with balloon","castle and balloon package","balloon package"],
+    "Jumping Castle":        ["jumping castle","jumping castles","bouncy castle","jumpy castle","castle","bouncy"],
+    "Bubble House":          ["bubble house","bubble tent","bubble dome","balloon house","bubble"],
+    "Water Slide":           ["water slide","waterslide","water slides","slip and slide","slide"],
+    "3D Arch":               ["3d arch","3-d arch","three tier arch","3 tier arch","layered arch","3d backdrop"],
+    "Welcome Flower Box":    ["flower box","welcome flower","floral welcome","welcome box","flower sign"],
+    "Welcome Board with Frame": ["welcome board","welcome sign","easel","welcome frame","sign board","seating plan board"],
     "3x6 Gazebo":            ["3x6","3 by 6","3x6 gazebo","large gazebo","big gazebo"],
     "3x3 Gazebo":            ["3x3","3 by 3","3x3 gazebo","medium gazebo"],
     "2x2 Gazebo":            ["2x2","2 by 2","small gazebo","2x2 gazebo"],
@@ -1122,9 +1132,6 @@ const Jane = (() => {
           return resp;
         }
 
-        // ── Kiddies range (quoted manually, not in booking inventory yet) ─
-        if (/\b(kid|kids|kiddie|kiddies|child|children|jumping|castle|bouncy|bubble|water ?slide)\b/i.test(correctedMsg)) return respondItemsHelp('kids');
-
         // ── Single product detection (with typo correction + fuzzy) ─
         const product = detectProduct(correctedMsg) || detectProduct(correctedOriginal);
         if (product) {
@@ -1138,6 +1145,7 @@ const Jane = (() => {
         if (/tent|gazebo|marquee|cabana|shelter|canopy/i.test(correctedMsg)) { state.lastCategory = 'tents'; return respondItemsHelp('tent'); }
         if (/photo|booth|stage|backdrop|balloon/i.test(correctedMsg)) return respondItemsHelp('photo');
         if (/food|cake|riser|pyramid|stand|display/i.test(correctedMsg)) return respondItemsHelp('food stand');
+        if (/\b(kid|kids|kiddie|kiddies|child|children|party for kids)\b/i.test(correctedMsg)) return respondItemsHelp('kids');
 
         // ── "Only X" / "just X" constraint ──────────────────────────
         if (/\b(only|just|only want|just want|only need|just need)\b/i.test(correctedMsg)) {

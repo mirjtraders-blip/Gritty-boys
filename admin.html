@@ -723,7 +723,7 @@ function adminOpenBuildQuote(requestId) {
   document.getElementById('adminBqTitle').textContent = `Build Quote — ${req.name || 'Client'}`;
 
   const inv = window.Bob ? Bob.INVENTORY_MASTER : {};
-  const categories = ['tents','chairs','photobooth','food'];
+  const categories = ['tents','chairs','tables','photobooth','food','kids'];
   const catLabels = { tents:'Tents & Gazebos', chairs:'Chairs & Seating', photobooth:'Stage & Photo', food:'Food Stands' };
 
   let html = '';
