@@ -27,9 +27,9 @@
     .kid-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:2px; }
     .kid-card { background:var(--card-dark); border:1px solid var(--border); transition:border-color 0.3s; overflow:hidden; display:flex; flex-direction:column; }
     .kid-card:hover { border-color:var(--border-gold); }
-    .kid-visual { height:220px; display:flex; align-items:center; justify-content:center; font-size:5rem; position:relative; overflow:hidden; }
+    .kid-visual { height:280px; display:flex; align-items:center; justify-content:center; font-size:5rem; position:relative; overflow:hidden; }
     .kid-visual span { transition:transform 0.5s; filter:drop-shadow(0 8px 18px rgba(0,0,0,0.35)); }
-    .kid-visual img { width:100%; height:100%; object-fit:cover; object-position:center 55%; transition:transform 0.5s; display:block; }
+    .kid-visual img { width:100%; height:100%; object-fit:cover; object-position:center; transition:transform 0.5s; display:block; }
     .kid-card:hover .kid-visual img { transform:scale(1.04); }
     .kid-card:hover .kid-visual span { transform:scale(1.12) rotate(-4deg); }
     .kv-chairs { background:linear-gradient(135deg,#3a2f4d,#6b4f7a); }
@@ -116,7 +116,7 @@
 
       <!-- Kiddies Tiffany Chairs -->
       <div class="kid-card reveal">
-        <div class="kid-visual kv-chairs" role="img" aria-label="Kiddies Tiffany chairs"><span>🪑</span></div>
+        <div class="kid-visual kv-chairs"><img src="images/kiddies-tiffany-chair.jpg" alt="White kiddies Tiffany chair on a lawn" loading="lazy" decoding="async"/></div>
         <div class="kid-body">
           <div class="product-tag">Party Favourite</div>
           <div class="kid-name">Kiddies Tiffany Chairs</div>
