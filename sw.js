@@ -1,5 +1,5 @@
 /* Mirj Rentals — Service Worker */
-const CACHE = 'mirj-workers-v2';
+const CACHE = 'mirj-workers-v3';
 const ASSETS = ['worker-app.html','js/bob.js','js/analytics.js','style.css','manifest.json'];
 
 self.addEventListener('install', e => {
