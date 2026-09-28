@@ -11,8 +11,8 @@
   </script>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Cake & Food Stands — Mirj Rentals</title>
-  <meta name="description" content="Hire step displays, food pedestals, table risers and pyramid display stands for weddings and events. Bundle deals available across Cape Town."/>
+  <title>Kiddies Party Hire — Mirj Rentals</title>
+  <meta name="description" content="Kids party hire in Cape Town: kiddies Tiffany chairs, kids party tables, jumping castles and water slides. Delivery available from Athlone."/>
   <!-- Fonts — async (non-render-blocking) -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -23,26 +23,28 @@
   <meta name="theme-color" content="#0a0a0a"/>
   <link rel="stylesheet" href="style.css"/>
   <style>
-    .food-hero-bg { background-image:url('https://images.unsplash.com/photo-1535254973040-607b474cb50d?w=1600&q=80'); }
-    .stand-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:2px; }
-    .stand-card { background:var(--card-dark); border:1px solid var(--border); transition:border-color 0.3s; overflow:hidden; }
-    .stand-card:hover { border-color:var(--border-gold); }
-    .stand-img { width:100%; height:260px; object-fit:cover; filter:brightness(0.85); transition:filter 0.4s,transform 0.5s; display:block; }
-    .stand-card:hover .stand-img { filter:brightness(1); transform:scale(1.04); }
-    .stand-img-wrap { overflow:hidden; }
-    .stand-body { padding:26px 28px 30px; }
-    .stand-name { font-family:var(--font-main); font-size:1.6rem; font-weight:400; color:var(--white); margin-bottom:6px; }
-    .stand-price { color:var(--gold); font-weight:700; font-size:1rem; margin-bottom:10px; }
-    .stand-desc { color:var(--text-dim); font-size:0.83rem; line-height:1.65; margin-bottom:16px; }
+    .kids-hero-bg { background:radial-gradient(circle at 20% 30%,#f2b8c6 0,transparent 45%),radial-gradient(circle at 80% 20%,#9fd4f0 0,transparent 45%),radial-gradient(circle at 60% 85%,#f7dd8a 0,transparent 50%),#2a2340; filter:brightness(0.55) !important; }
+    .kid-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:2px; }
+    .kid-card { background:var(--card-dark); border:1px solid var(--border); transition:border-color 0.3s; overflow:hidden; display:flex; flex-direction:column; }
+    .kid-card:hover { border-color:var(--border-gold); }
+    .kid-visual { height:220px; display:flex; align-items:center; justify-content:center; font-size:5rem; position:relative; overflow:hidden; }
+    .kid-visual span { transition:transform 0.5s; filter:drop-shadow(0 8px 18px rgba(0,0,0,0.35)); }
+    .kid-card:hover .kid-visual span { transform:scale(1.12) rotate(-4deg); }
+    .kv-chairs { background:linear-gradient(135deg,#3a2f4d,#6b4f7a); }
+    .kv-tables { background:linear-gradient(135deg,#2f3f4d,#4f7a8a); }
+    .kv-castle { background:linear-gradient(135deg,#4d2f3a,#8a4f5f); }
+    .kv-slide  { background:linear-gradient(135deg,#1f3d4d,#2f7a9a); }
+    .kid-body { padding:26px 28px 30px; display:flex; flex-direction:column; flex:1; }
+    .kid-name { font-family:var(--font-main); font-size:1.6rem; font-weight:400; color:var(--white); margin-bottom:6px; }
+    .kid-price { color:var(--gold); font-weight:700; font-size:1rem; margin-bottom:10px; }
+    .kid-price small { display:block; font-size:0.85rem; color:var(--gold-light); font-weight:600; margin-top:4px; }
+    .kid-desc { color:var(--text-dim); font-size:0.83rem; line-height:1.65; margin-bottom:16px; flex:1; }
     .deal-box { background:rgba(201,168,76,0.08); border:1px solid var(--border-gold); padding:12px 16px; margin-bottom:18px; }
     .deal-box p { font-size:0.8rem; color:var(--gold-light); line-height:1.5; }
     .deal-box strong { color:var(--gold); }
-    /* Two-photo gallery for stand cards */
-    .stand-photo-gallery { display:grid; grid-template-columns:1fr 1fr; gap:2px; height:260px; overflow:hidden; }
-    .stand-photo-gallery img { width:100%; height:260px; object-fit:cover; object-position:center; filter:brightness(0.85); transition:filter 0.4s,transform 0.5s; display:block; }
-    .stand-card:hover .stand-photo-gallery img { filter:brightness(1); transform:scale(1.04); }
+    .kid-card .btn { align-self:flex-start; }
     .combo-section { background:var(--off-black); }
-    .combo-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; }
+    .combo-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; }
     .combo-card { background:var(--card-dark); border:1px solid var(--border); padding:28px 24px; text-align:center; transition:border-color 0.3s; }
     .combo-card:hover { border-color:var(--border-gold); }
     .combo-icon { font-size:2.5rem; margin-bottom:12px; }
@@ -52,7 +54,6 @@
   </style>
 </head>
 <body>
-
 <header>
   <nav class="navbar" role="navigation" aria-label="Main navigation">
     <a href="index.html" class="nav-logo">
@@ -67,8 +68,9 @@
           <a href="chairs.html">Chairs & Seating</a>
           <a href="tables.html">Tables</a>
           <a href="photobooth.html">Photo Booths & Stages</a>
-          <a href="food-stands.html" class="active">Cake & Food Stands</a>
-          <a href="kiddies.html">Kiddies Party Hire</a>
+          <a href="food-stands.html">Cake & Food Stands</a>
+    <a href="kiddies.html">Kiddies Party Hire</a>
+          <a href="kiddies.html" class="active">Kiddies Party Hire</a>
         </div>
       </li>
       <li><a href="index.html#about">About</a></li>
@@ -90,79 +92,73 @@
 </header>
 
 <section class="page-hero">
-  <div class="page-hero-bg food-hero-bg"></div>
+  <div class="page-hero-bg kids-hero-bg"></div>
   <div class="page-hero-overlay"></div>
   <div class="page-hero-content">
-    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Cake & Food Stands</span></div>
-    <h1>Cake &amp; Food <em>Stands</em></h1>
-    <p>Elegant presentation solutions that elevate your dessert table, buffet, and centrepieces into a visual masterpiece.</p>
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Kiddies Party Hire</span></div>
+    <h1>Kiddies <em>Party Hire</em></h1>
+    <p>Little chairs, party tables, jumping castles and water slides. Everything you need for a birthday the kids will talk about for weeks.</p>
   </div>
 </section>
 
 <section>
   <div class="container">
     <div class="section-header reveal">
-      <p class="section-tag">Display & Presentation</p>
-      <h2>Presentation That <em>Impresses</em></h2>
+      <p class="section-tag">Kids Collection</p>
+      <h2>Made for <em>Little Guests</em></h2>
       <div class="section-divider"></div>
-      <p>The right display can transform a dessert table into a showpiece. Our stands are elegant, sturdy, and available in quantities to suit any event.</p>
+      <p>Kid-sized furniture and outdoor fun, delivered and set up across Cape Town. Perfect for birthdays, playschool events, church fun days and family gatherings.</p>
     </div>
 
-    <div class="stand-grid">
+    <div class="kid-grid">
 
-      <!-- Step Displays -->
-      <div class="stand-card reveal">
-        <div class="stand-img-wrap">
-          <img class="stand-img"
-            src="images/step-display-new.png"
-            alt="Step Display — elegant tiered cupcake display" loading="lazy" decoding="async"/>
+      <!-- Kiddies Tiffany Chairs -->
+      <div class="kid-card reveal">
+        <div class="kid-visual kv-chairs" role="img" aria-label="Kiddies Tiffany chairs"><span>🪑</span></div>
+        <div class="kid-body">
+          <div class="product-tag">Party Favourite</div>
+          <div class="kid-name">Kiddies Tiffany Chairs</div>
+          <div class="kid-price">R15 per chair / per day</div>
+          <div class="kid-desc">Mini versions of our elegant Tiffany chairs, sized just right for little ones. They make any kids' table look picture-perfect and give the birthday party a proper grown-up feel. Great for birthdays, tea parties and baby showers with kids attending.</div>
+          <a href="index.html#contact" class="btn btn-gold">Request a Quote</a>
         </div>
-        <div class="stand-body">
-          <div class="product-tag">Centrepiece</div>
-          <div class="stand-name">Step Display</div>
-          <div class="stand-price">R50 per stand / per day</div>
-          <div class="stand-desc">Elegant cake display stands that add height and visual impact to your dessert table. Perfect for wedding cakes, birthday cakes, and cupcake towers. Available in a range of styles. Up to 4 available.</div>
+      </div>
+
+      <!-- Kiddies Party Tables -->
+      <div class="kid-card reveal reveal-delay-1">
+        <div class="kid-visual kv-tables" role="img" aria-label="Kiddies party tables"><span>🎂</span></div>
+        <div class="kid-body">
+          <div class="product-tag">Essential</div>
+          <div class="kid-name">Kiddies Party Tables</div>
+          <div class="kid-price">R100 per table / per day</div>
+          <div class="kid-desc">Low, sturdy party tables built for small guests. Ideal for eating, crafts, cake time and party packs. Pair with our Kiddies Tiffany Chairs for a complete, beautifully styled kids' setup.</div>
+          <a href="index.html#contact" class="btn btn-gold">Request a Quote</a>
+        </div>
+      </div>
+
+      <!-- Jumping Castle -->
+      <div class="kid-card reveal reveal-delay-2">
+        <div class="kid-visual kv-castle" role="img" aria-label="Jumping castle"><span>🏰</span></div>
+        <div class="kid-body">
+          <div class="product-tag">Crowd Pleaser</div>
+          <div class="kid-name">Jumping Castle</div>
+          <div class="kid-price">R800 per day<small>R1,500 per day with balloon décor</small></div>
+          <div class="kid-desc">Hours of bouncing fun that keeps the kids busy while the adults relax. Upgrade to the balloon package and we'll dress it up with a matching balloon setup for a real party centrepiece.</div>
           <div class="deal-box">
-            <p>💡 Pro Tip: Pair with our Pyramid Stand and Food Pedestals to create a stunning tiered dessert display.</p>
+            <p><strong>🎈 Balloon Package:</strong> Jumping castle plus balloon décor for R1,500 per day.</p>
           </div>
           <a href="index.html#contact" class="btn btn-gold">Request a Quote</a>
         </div>
       </div>
 
-      <!-- Food Pedestals / Table Risers -->
-      <div class="stand-card reveal reveal-delay-1">
-        <div class="stand-img-wrap">
-          <img class="stand-img"
-            src="images/food-risers-new.webp"
-            alt="Food Pedestals — colourful buffet display with white pedestal stands" loading="lazy" decoding="async"/>
-        </div>
-        <div class="stand-body">
-          <div class="product-tag">Best Value</div>
-          <div class="stand-name">Food Pedestals / Table Risers</div>
-          <div class="stand-price">R50 each · R120 for 3 / per day</div>
-          <div class="stand-desc">Versatile food pedestals and table risers that work beautifully for canapés, desserts, fruit displays, and small centrepieces. Mix heights for a visually dynamic table setup. Up to 15 units available.</div>
-          <div class="deal-box">
-            <p><strong>🏷️ Bundle Deal:</strong> Hire 3 pedestals for just R120 per day — the perfect complement to any dessert or catering table.</p>
-          </div>
-          <a href="index.html#contact" class="btn btn-gold">Request a Quote</a>
-        </div>
-      </div>
-
-      <!-- Pyramid Stand -->
-      <div class="stand-card reveal reveal-delay-2">
-        <div class="stand-img-wrap">
-          <img class="stand-img"
-            src="images/pyramid-stand-new.png"
-            alt="Pyramid Stand — three-tier white wooden display with donuts and pastries" loading="lazy" decoding="async"/>
-        </div>
-        <div class="stand-body">
-          <div class="product-tag">Statement Piece</div>
-          <div class="stand-name">Pyramid Stand</div>
-          <div class="stand-price">R50 each · R90 for 2 / per day</div>
-          <div class="stand-desc">A dramatic multi-tiered pyramid display stand — perfect for showing off macaron towers, cake pops, petit fours, or any small confections. Creates instant visual impact and works beautifully in photographs. Up to 5 available.</div>
-          <div class="deal-box">
-            <p><strong>🏷️ Pair Deal:</strong> Hire 2 Pyramid Stands for just R90 per day. Perfect for: Weddings, 21sts, Sweet Tables & Candy Bars.</p>
-          </div>
+      <!-- Water Slide -->
+      <div class="kid-card reveal reveal-delay-3">
+        <div class="kid-visual kv-slide" role="img" aria-label="Water slide"><span>💦</span></div>
+        <div class="kid-body">
+          <div class="product-tag">Summer Hit</div>
+          <div class="kid-name">Water Slide</div>
+          <div class="kid-price">R450 per day</div>
+          <div class="kid-desc">Beat the Cape Town heat with a water slide the kids will queue up for again and again. Perfect for summer birthdays, pool parties and outdoor fun days.</div>
           <a href="index.html#contact" class="btn btn-gold">Request a Quote</a>
         </div>
       </div>
@@ -176,29 +172,29 @@
   <div class="container">
     <div class="section-header reveal">
       <p class="section-tag">Suggested Combinations</p>
-      <h2>Popular Display <em>Packages</em></h2>
+      <h2>Popular Party <em>Setups</em></h2>
       <div class="section-divider"></div>
     </div>
     <div class="combo-grid">
       <div class="combo-card reveal">
-        <div class="combo-icon">🎂</div>
-        <h4>Classic Cake Display</h4>
-        <p>1× Step Display + 3× Food Pedestals</p>
-        <span class="combo-price">From R170 / day</span>
+        <div class="combo-icon">🧁</div>
+        <h4>Little Party Table</h4>
+        <p>1× Kiddies Party Table + 8× Kiddies Tiffany Chairs</p>
+        <span class="combo-price">From R220 / day</span>
         <a href="index.html#contact" class="btn btn-outline" style="font-size:0.7rem;padding:9px 20px">Enquire</a>
       </div>
       <div class="combo-card reveal reveal-delay-1">
-        <div class="combo-icon">🍬</div>
-        <h4>Sweet Table Package</h4>
-        <p>1× Pyramid Stand + 6× Food Pedestals + 1× Step Display</p>
-        <span class="combo-price">From R340 / day</span>
+        <div class="combo-icon">🎉</div>
+        <h4>Birthday Bash</h4>
+        <p>Jumping Castle + 2× Kiddies Party Tables + 16× Kiddies Tiffany Chairs</p>
+        <span class="combo-price">From R1,240 / day</span>
         <a href="index.html#contact" class="btn btn-outline" style="font-size:0.7rem;padding:9px 20px">Enquire</a>
       </div>
       <div class="combo-card reveal reveal-delay-2">
-        <div class="combo-icon">👑</div>
-        <h4>Premium Dessert Showcase</h4>
-        <p>4× Step Displays + 5× Pyramid Stands + 15× Food Pedestals</p>
-        <span class="combo-price">From R1,050 / day</span>
+        <div class="combo-icon">☀️</div>
+        <h4>Summer Splash</h4>
+        <p>Jumping Castle with Balloons + Water Slide</p>
+        <span class="combo-price">From R1,950 / day</span>
         <a href="index.html#contact" class="btn btn-outline" style="font-size:0.7rem;padding:9px 20px">Enquire</a>
       </div>
     </div>
@@ -206,8 +202,8 @@
 </section>
 
 <section class="cta-band">
-  <h2>Building your perfect <em style="font-style:italic">dessert table</em>?</h2>
-  <p>Jane can help you design a display setup that matches your event theme and budget perfectly.</p>
+  <h2>Planning a <em style="font-style:italic">kids' party</em>?</h2>
+  <p>Tell Jane the date and how many kids are coming, and she'll help you put the perfect setup together.</p>
   <button onclick="document.getElementById('chatBubbleBtn').click()" class="btn btn-white">Chat with Jane</button>
 </section>
 
@@ -257,9 +253,9 @@
     </div>
     <div class="chat-messages" id="janeMessages"></div>
     <div class="chat-quick-btns" id="janeQuickBtns">
-      <button class="jane-quick" data-msg="I need step displays for my wedding">Step display hire</button>
-      <button class="jane-quick" data-msg="Tell me about food pedestals">Food pedestals</button>
-      <button class="jane-quick" data-msg="How much is the pyramid stand?">Pyramid stand price</button>
+      <button class="jane-quick" data-msg="How much is the jumping castle?">Jumping castle</button>
+      <button class="jane-quick" data-msg="I need kiddies chairs and tables for a party">Kids chairs & tables</button>
+      <button class="jane-quick" data-msg="Is the water slide available?">Water slide</button>
     </div>
     <div class="chat-input-area">
       <input type="text" id="janeInput" placeholder="Type your message…" autocomplete="off" aria-label="Chat with Jane — type your message"/>
