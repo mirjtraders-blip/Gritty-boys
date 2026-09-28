@@ -1123,7 +1123,7 @@ const Jane = (() => {
         }
 
         // ── Kiddies range (quoted manually, not in booking inventory yet) ─
-        if (/\b(kid|kids|kiddie|kiddies|child|children|jumping|castle|bouncy|water ?slide)\b/i.test(correctedMsg)) return respondItemsHelp('kids');
+        if (/\b(kid|kids|kiddie|kiddies|child|children|jumping|castle|bouncy|bubble|water ?slide)\b/i.test(correctedMsg)) return respondItemsHelp('kids');
 
         // ── Single product detection (with typo correction + fuzzy) ─
         const product = detectProduct(correctedMsg) || detectProduct(correctedOriginal);
@@ -1598,8 +1598,8 @@ const Jane = (() => {
     if (/tent|canopy|cover|shelter/.test(msg)) {
       return state.guestCount ? respondTentAdvice(msg) : "We offer Gazebos (2×2 at R250, 3×3 at R400, 3×6 at R600/day), Cabanas (3×9 at R1,400), Stretch Tents (from R1,800), and Marquees (from R2,500). How many guests are you expecting? I'll recommend the perfect size!";
     }
-    if (/kid|kiddie|child|jump|castle|bounc|water ?slide|slide/.test(msg)) {
-      return "**Kiddies Party Hire:**\n• Kiddies Tiffany Chairs — R15/day\n• Kiddies Party Tables — R100/day\n• Jumping Castle — R800/day (R1 500 with balloon décor)\n• Water Slide — R450/day\n\nHow many kids are you expecting, and what's the date?";
+    if (/kid|kiddie|child|jump|castle|bounc|bubble|water ?slide|slide/.test(msg)) {
+      return "**Kiddies Party Hire:**\n• Kiddies Tiffany Chairs — R15/day\n• Kiddies Party Tables — R100/day\n• Jumping Castle — R800/day (R1 500 with balloon décor)\n• Bubble House — R1 500/day\n• Water Slide — R450/day\n\nHow many kids are you expecting, and what's the date?";
     }
     if (/chair|seat|bench/.test(msg)) {
       const gc = state.guestCount;
@@ -1619,7 +1619,7 @@ const Jane = (() => {
     if (state.lastCategory === 'chairs') return respondItemsHelp('chair');
     if (state.lastCategory === 'tables') return respondItemsHelp('table');
     if (state.lastCategory === 'tents') return respondItemsHelp('tent');
-    return `Here's what we have — just tell me what you'd like and how many:\n\n🏕️ **Tents** — Gazebos (R250–R600), Cabana, Stretch Tents, Marquees\n🪑 **Chairs** — Tiffany (R20), Foldable (R15), Stackable (R7), Cocktail bar stools (R30)\n🪵 **Tables** — Round (R80), Foldable (R60), Cocktail (R80), Display (R150)\n📸 **Entertainment** — Photo Booth (R2 000), Stages, Backdrop Arcs\n🍰 **Displays** — Step Display, Food Pedestals, Pyramid Stands\n🎈 **Kiddies** — Kiddies Tiffany Chairs (R15), Party Tables (R100), Jumping Castle (R800, or R1 500 with balloons), Water Slide (R450)\n\nYou can say things like: _"20 Tiffany chairs"_, _"5 round tables"_, or _"1 stretch tent and 60 chairs"_`;
+    return `Here's what we have — just tell me what you'd like and how many:\n\n🏕️ **Tents** — Gazebos (R250–R600), Cabana, Stretch Tents, Marquees\n🪑 **Chairs** — Tiffany (R20), Foldable (R15), Stackable (R7), Cocktail bar stools (R30)\n🪵 **Tables** — Round (R80), Foldable (R60), Cocktail (R80), Display (R150)\n📸 **Entertainment** — Photo Booth (R2 000), Stages, Backdrop Arcs\n🍰 **Displays** — Step Display, Food Pedestals, Pyramid Stands\n🎈 **Kiddies** — Kiddies Tiffany Chairs (R15), Party Tables (R100), Jumping Castle (R800, or R1 500 with balloons), Bubble House (R1 500), Water Slide (R450)\n\nYou can say things like: _"20 Tiffany chairs"_, _"5 round tables"_, or _"1 stretch tent and 60 chairs"_`;
   }
 
   // =================== PUBLIC API ===================
