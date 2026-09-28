@@ -29,6 +29,8 @@
     .kid-card:hover { border-color:var(--border-gold); }
     .kid-visual { height:220px; display:flex; align-items:center; justify-content:center; font-size:5rem; position:relative; overflow:hidden; }
     .kid-visual span { transition:transform 0.5s; filter:drop-shadow(0 8px 18px rgba(0,0,0,0.35)); }
+    .kid-visual img { width:100%; height:100%; object-fit:cover; object-position:center 55%; transition:transform 0.5s; display:block; }
+    .kid-card:hover .kid-visual img { transform:scale(1.04); }
     .kid-card:hover .kid-visual span { transform:scale(1.12) rotate(-4deg); }
     .kv-chairs { background:linear-gradient(135deg,#3a2f4d,#6b4f7a); }
     .kv-tables { background:linear-gradient(135deg,#2f3f4d,#4f7a8a); }
@@ -126,7 +128,7 @@
 
       <!-- Kiddies Party Tables -->
       <div class="kid-card reveal reveal-delay-1">
-        <div class="kid-visual kv-tables" role="img" aria-label="Kiddies party tables"><span>🎂</span></div>
+        <div class="kid-visual kv-tables"><img src="images/kiddies-party-table.jpg" alt="White kiddies party table with kids Tiffany chairs on a lawn" loading="lazy" decoding="async"/></div>
         <div class="kid-body">
           <div class="product-tag">Essential</div>
           <div class="kid-name">Kiddies Party Tables</div>
